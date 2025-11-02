@@ -15,7 +15,7 @@ const branches = [
     address: "Ambarlı Mahallesi, Rıfat Ilgaz Sokak No:15/A, Avcılar / İstanbul",
     phone: "+90 (212) 000 00 00",
     whatsapp: "https://wa.me/902120000000",
-    email: "avcilar@efessurucukursu.com",
+    email: "avcilar@efesurucukursu.com",
     hours: "Hafta içi: 09:00 - 21:00 | Cumartesi: 10:00 - 20:00",
     features: ["Modern sınıflar", "Otopark imkanı", "Metrobüs yakını"]
   },
@@ -24,7 +24,7 @@ const branches = [
     address: "Kumburgaz Mahallesi, Sahil Yolu Caddesi No:28, Büyükçekmece / İstanbul",
     phone: "+90 (212) 000 00 01",
     whatsapp: "https://wa.me/902120000001",
-    email: "buyukcekmece@efessurucukursu.com",
+    email: "buyukcekmece@efesurucukursu.com",
     hours: "Hafta içi: 09:00 - 21:00 | Cumartesi: 10:00 - 20:00",
     features: ["Geniş parkur alanı", "Sahil kenarı", "Ücretsiz otopark"]
   }
@@ -828,14 +828,14 @@ export default function Home() {
                 SK
               </span>
               <p className="text-sm text-muted-foreground">
-                Efes Sürücü Kursu, profesyonel sürüş eğitimiyle güvenli sürücü yetiştirmenin en hızlı yolu.
+                Efe Sürücü Kursu, profesyonel sürüş eğitimiyle güvenli sürücü yetiştirmenin en hızlı yolu.
               </p>
             </div>
             <div>
               <h4 className="text-sm font-bold text-foreground mb-4">Avcılar Şubesi</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li>+90 (212) 000 00 00</li>
-                <li>avcilar@efessurucukursu.com</li>
+                <li>avcilar@efesurucukursu.com</li>
                 <li>Ambarlı Mah. Rıfat Ilgaz Sk. No:15/A Avcılar</li>
               </ul>
             </div>
@@ -843,7 +843,7 @@ export default function Home() {
               <h4 className="text-sm font-bold text-foreground mb-4">Büyükçekmece Şubesi</h4>
               <ul className="space-y-2 text-sm text-muted-foreground">
                 <li>+90 (212) 000 00 01</li>
-                <li>buyukcekmece@efessurucukursu.com</li>
+                <li>buyukcekmece@efesurucukursu.com</li>
                 <li>Kumburgaz Mah. Sahil Yolu Cad. No:28</li>
               </ul>
             </div>
@@ -874,7 +874,7 @@ export default function Home() {
             </div>
           </div>
           <div className="mx-auto mt-10 flex w-full max-w-7xl flex-col items-center gap-3 px-6 text-center text-xs text-muted-foreground sm:flex-row sm:justify-between">
-            <p>© {new Date().getFullYear()} Efes Sürücü Kursu. Tüm hakları saklıdır.</p>
+            <p>© {new Date().getFullYear()} Efe Sürücü Kursu. Tüm hakları saklıdır.</p>
             <div className="flex gap-4">
               <Link href="#" className="transition hover:text-primary">
                 KVKK
