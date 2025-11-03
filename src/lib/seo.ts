@@ -17,8 +17,8 @@ export function getPageMetadata({
   lang = 'tr',
   keywords = []
 }: PageMetadataProps) {
-  const siteName = "Efe Sürücü Kursu";
-  const defaultDescription = "Avcılar ve Büyükçekmece'de MEB onaylı sürücü kursu - Tüm sınıflarda ehliyet eğitimi";
+  const siteName = "Avcılar Sürücü Kursu";
+  const defaultDescription = "İstanbul Avcılar ve Büyükçekmece'de MEB onaylı profesyonel sürücü kursu - Tüm sınıflarda ehliyet eğitimi ve direksiyon dersleri";
   const defaultImage = buildAbsoluteUrl('/avcilarlogo.png');
   const canonicalUrl = url ? buildAbsoluteUrl(url) : undefined;
 

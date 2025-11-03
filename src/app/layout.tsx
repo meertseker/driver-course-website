@@ -28,9 +28,9 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title:
-    "Efe Sürücü Kursu | Avcılar & Büyükçekmece Ehliyet Kursu | A1 A2 A B BE C D",
+    "Avcılar Sürücü Kursu | İstanbul Avcılar & Büyükçekmece Ehliyet Kursu | A1 A2 A B BE C D",
   description:
-    "Avcılar ve Büyükçekmece'de MEB onaylı Efe Sürücü Kursu: A1, A2, A motosiklet; B, BE otomobil; C, CE kamyon-çekici; D, D1 minibüs-otobüs, M-F-G sınıflarında teorik ve direksiyon eğitimleri. İstanbul Avrupa Yakası'nda 2 şube, yüksek başarı oranı.",
+    "İstanbul Avcılar ve Büyükçekmece'de MEB onaylı Avcılar Sürücü Kursu: A1, A2, A motosiklet; B, BE otomobil; C, CE kamyon-çekici; D, D1 minibüs-otobüs, M-F-G sınıflarında teorik ve direksiyon eğitimleri. İstanbul Avrupa Yakası'nda 2 şube, %94 başarı oranı.",
   metadataBase: new URL("https://efesurucukursu.example"),
   alternates: {
     canonical: "/",
@@ -58,9 +58,9 @@ export const metadata: Metadata = {
     "direksiyon dersi",
     "e-sınav",
   ],
-  authors: [{ name: "Efe Sürücü Kursu" }],
-  creator: "Efe Sürücü Kursu",
-  publisher: "Efe Sürücü Kursu",
+  authors: [{ name: "Avcılar Sürücü Kursu" }],
+  creator: "Avcılar Sürücü Kursu",
+  publisher: "Avcılar Sürücü Kursu",
   robots: {
     index: true,
     follow: true,
@@ -81,24 +81,24 @@ export const metadata: Metadata = {
   },
   appleWebApp: {
     statusBarStyle: "default",
-    title: "Efe Sürücü Kursu",
+    title: "Avcılar Sürücü Kursu",
   },
   openGraph: {
     title:
-      "Efe Sürücü Kursu | Avcılar & Büyükçekmece Ehliyet Kursu | A1 A2 A B BE C D",
+      "Avcılar Sürücü Kursu | İstanbul Avcılar & Büyükçekmece Ehliyet Kursu | A1 A2 A B BE C D",
     description:
-      "Avcılar ve Büyükçekmece'de MEB onaylı Efe Sürücü Kursu: tüm sınıflarda teori ve direksiyon eğitimleri, yüksek başarı ve esnek programlar. İstanbul Avrupa Yakası'nda 2 şube.",
+      "İstanbul Avcılar ve Büyükçekmece'de MEB onaylı Avcılar Sürücü Kursu: tüm sınıflarda teori ve direksiyon eğitimleri, %94 başarı oranı ve esnek programlar. İstanbul Avrupa Yakası'nda 2 şube.",
     url: "https://efesurucukursu.example",
-    siteName: "Efe Sürücü Kursu",
+    siteName: "Avcılar Sürücü Kursu",
     locale: "tr_TR",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
     title:
-      "Efe Sürücü Kursu | Avcılar & Büyükçekmece Ehliyet Kursu | A1 A2 A B BE C D",
+      "Avcılar Sürücü Kursu | İstanbul Avcılar & Büyükçekmece Ehliyet Kursu | A1 A2 A B BE C D",
     description:
-      "Avcılar ve Büyükçekmece'de MEB onaylı Efe Sürücü Kursu: tüm sınıflarda teori ve direksiyon eğitimleri, yüksek başarı ve esnek programlar.",
+      "İstanbul Avcılar ve Büyükçekmece'de MEB onaylı Avcılar Sürücü Kursu: tüm sınıflarda teori ve direksiyon eğitimleri, %94 başarı oranı ve esnek programlar.",
   },
 };
 
@@ -160,7 +160,7 @@ export default function RootLayout({
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Organization",
-            name: "Efe Sürücü Kursu",
+            name: "Avcılar Sürücü Kursu",
             url: "https://efesurucukursu.example/",
             areaServed: "İstanbul",
             sameAs: [],
@@ -176,7 +176,7 @@ export default function RootLayout({
             location: [
               {
                 "@type": "DrivingSchool",
-                name: "Efe Sürücü Kursu - Avcılar Şubesi",
+                name: "Avcılar Sürücü Kursu - Avcılar Şubesi",
                 telephone: "+90 212 000 00 00",
                 address: {
                   "@type": "PostalAddress",
@@ -192,7 +192,7 @@ export default function RootLayout({
               },
               {
                 "@type": "DrivingSchool",
-                name: "Efe Sürücü Kursu - Büyükçekmece Şubesi",
+                name: "Avcılar Sürücü Kursu - Büyükçekmece Şubesi",
                 telephone: "+90 212 000 00 01",
                 address: {
                   "@type": "PostalAddress",

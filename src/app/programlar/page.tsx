@@ -8,7 +8,7 @@ import { getPageMetadata } from '@/lib/seo';
 
 export const metadata: Metadata = getPageMetadata({
   title: 'Programlar',
-  description: 'Efe Sürücü Kursu eğitim programları: B Otomobil, A Motosiklet, BE Römorklu, C Kamyon, D Otobüs sınıfları ve kurumsal eğitimler.',
+  description: 'Avcılar Sürücü Kursu eğitim programları: B Otomobil, A Motosiklet, BE Römorklu, C Kamyon, D Otobüs sınıfları ve kurumsal eğitimler. İstanbul Avcılar ve Büyükçekmece.',
   url: '/programlar',
   keywords: ['b ehliyet programı', 'a2 ehliyet', 'motosiklet kursu', 'kamyon ehliyeti', 'otobüs ehliyeti', 'kurumsal eğitim']
 });

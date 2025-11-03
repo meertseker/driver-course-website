@@ -27,7 +27,7 @@ export default function Header() {
         <Link href="/" className="flex items-center gap-3" onClick={closeMobile}>
           <Image
             src="/avcilarlogo.png"
-            alt="Efe Sürücü Kursu Logo"
+            alt="Avcılar Sürücü Kursu Logo"
             width={80}
             height={30}
             priority

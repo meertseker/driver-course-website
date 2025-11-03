@@ -7,7 +7,7 @@ import { getPageMetadata } from '@/lib/seo';
 
 export const metadata: Metadata = getPageMetadata({
   title: 'Şubelerimiz',
-  description: 'Efe Sürücü Kursu Avcılar ve Büyükçekmece şubeleri. İstanbul Avrupa Yakası&apos;nda 2 modern şubemizle hizmetinizdeyiz.',
+  description: 'Avcılar Sürücü Kursu Avcılar ve Büyükçekmece şubeleri. İstanbul Avrupa Yakası&apos;nda 2 modern şubemizle hizmetinizdeyiz.',
   url: '/subelerimiz',
   keywords: ['avcılar şube', 'büyükçekmece şube', 'şubelerimiz', 'adres', 'konum']
 });
@@ -18,7 +18,7 @@ const branches = [
     address: "Ambarlı Mahallesi, Rıfat Ilgaz Sokak No:15/A",
     city: "Avcılar / İstanbul",
     phone: "+90 (212) 000 00 00",
-    email: "avcilar@efesurucukursu.com",
+    email: "avcilar@avcilarsurucukursu.com",
     whatsapp: "https://wa.me/902120000000",
     mapUrl: "#",
     features: [
@@ -39,7 +39,7 @@ const branches = [
     address: "Kumburgaz Mahallesi, Sahil Yolu Caddesi No:28",
     city: "Büyükçekmece / İstanbul",
     phone: "+90 (212) 000 00 01",
-    email: "buyukcekmece@efesurucukursu.com",
+    email: "buyukcekmece@avcilarsurucukursu.com",
     whatsapp: "https://wa.me/902120000001",
     mapUrl: "#",
     features: [

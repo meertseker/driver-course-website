@@ -1,6 +1,6 @@
-# Efe Sürücü Kursu - Modern Web Sitesi
+# Avcılar Sürücü Kursu - Modern Web Sitesi
 
-Avcılar ve Büyükçekmece'de faaliyet gösteren Efe Sürücü Kursu'nun resmi web sitesi. Next.js 16, React 19 ve TypeScript ile geliştirilmiş, modern ve performanslı bir web uygulaması.
+İstanbul Avcılar ve Büyükçekmece'de faaliyet gösteren Avcılar Sürücü Kursu'nun resmi web sitesi. Next.js 16, React 19 ve TypeScript ile geliştirilmiş, modern ve performanslı bir web uygulaması.
 
 ## 🚀 Özellikler
 
@@ -240,10 +240,10 @@ Pull request'ler memnuniyetle karşılanır!
 
 ## 📞 İletişim
 
-- 📧 Email: info@efesurucukursu.example
+- 📧 Email: info@avcilarsurucukursu.com
 - 📱 Telefon (Avcılar): +90 212 000 00 00
 - 📱 Telefon (Büyükçekmece): +90 212 000 00 01
 
 ---
 
-**© 2024 Efe Sürücü Kursu - Tüm hakları saklıdır.**
+**© 2024 Avcılar Sürücü Kursu - Tüm hakları saklıdır.**

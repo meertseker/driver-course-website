@@ -59,7 +59,7 @@ const faqs = [
 
 export const metadata: Metadata = getPageMetadata({
   title: 'Sıkça Sorulan Sorular',
-  description: 'Efe Sürücü Kursu hakkında en çok merak edilen sorular ve cevapları. Kurs ücreti, sınav süreci, gerekli belgeler ve daha fazlası.',
+  description: 'Avcılar Sürücü Kursu hakkında en çok merak edilen sorular ve cevapları. Kurs ücreti, sınav süreci, gerekli belgeler ve daha fazlası.',
   url: '/sss',
   keywords: ['sürücü kursu SSS', 'ehliyet sınavı soruları', 'kurs ücreti', 'direksiyon dersi', 'ehliyet başvurusu']
 });
@@ -91,7 +91,7 @@ export default function SSSPage() {
             Sıkça Sorulan Sorular
           </h1>
           <p className="text-lg text-gray-800 max-w-3xl mx-auto font-medium">
-            Efe Sürücü Kursu hakkında en çok merak edilen soruların cevaplarını burada bulabilirsiniz. 
+            Avcılar Sürücü Kursu hakkında en çok merak edilen soruların cevaplarını burada bulabilirsiniz. 
             Daha fazla bilgi için bizimle <Link href="/iletisim" className="text-accent hover:underline font-semibold">iletişime</Link> geçebilirsiniz.
           </p>
         </div>

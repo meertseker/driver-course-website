@@ -7,9 +7,9 @@ import { getPageMetadata } from '@/lib/seo';
 
 export const metadata: Metadata = getPageMetadata({
   title: 'Hakkımızda',
-  description: '2009\'dan bu yana Avcılar ve Büyükçekmece\'de profesyonel sürücü eğitimi veren Efe Sürücü Kursu hakkında bilgi edinin.',
+  description: '2009\'dan bu yana İstanbul Avcılar ve Büyükçekmece\'de profesyonel sürücü eğitimi veren Avcılar Sürücü Kursu hakkında bilgi edinin.',
   url: '/hakkimizda',
-  keywords: ['efe sürücü kursu', 'hakkımızda', 'sürücü kursu tarihi', 'profesyonel eğitim']
+  keywords: ['avcılar sürücü kursu', 'hakkımızda', 'istanbul sürücü kursu', 'profesyonel eğitim', 'sürücü kursu tarihi']
 });
 
 const values = [
@@ -60,7 +60,7 @@ export default function HakkimizdaPage() {
             15 yıldır güvenli sürücü yetiştiriyoruz
           </h1>
           <p className="text-lg text-gray-800 max-w-3xl mx-auto leading-relaxed font-medium">
-            2009 yılından bu yana Avcılar ve Büyükçekmece&apos;de faaliyet gösteren Efe Sürücü Kursu, 
+            2009 yılından bu yana İstanbul Avcılar ve Büyükçekmece&apos;de faaliyet gösteren Avcılar Sürücü Kursu, 
             sadece ehliyet kazandırmakla kalmayıp, trafikte doğru reflekslere sahip, sorumlu ve 
             güvenli sürücüler yetiştirme misyonuyla hizmet vermektedir.
           </p>
@@ -129,7 +129,7 @@ export default function HakkimizdaPage() {
         <section className="mb-20">
           <div className="relative overflow-hidden rounded-[32px] border border-primary/20 bg-gradient-to-br from-primary via-secondary to-primary/80 px-8 py-16 text-white shadow-[0_30px_80px_rgba(29,104,169,0.25)]">
             <div className="relative z-10">
-              <h2 className="text-3xl font-bold text-center mb-12">Rakamlarla Efe Sürücü Kursu</h2>
+              <h2 className="text-3xl font-bold text-center mb-12">Rakamlarla Avcılar Sürücü Kursu</h2>
               <div className="grid gap-8 md:grid-cols-4">
                 <div className="text-center">
                   <div className="text-5xl font-bold mb-2">+3500</div>

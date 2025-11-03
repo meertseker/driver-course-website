@@ -10,7 +10,7 @@ const branches = [
     address: "Ambarlı Mahallesi, Rıfat Ilgaz Sokak No:15/A, Avcılar / İstanbul",
     phone: "+90 (212) 000 00 00",
     whatsapp: "https://wa.me/902120000000",
-    email: "avcilar@efesurucukursu.com",
+    email: "avcilar@avcilarsurucukursu.com",
     hours: "Hafta içi: 09:00 - 21:00 | Cumartesi: 10:00 - 20:00",
     features: ["Modern sınıflar", "Otopark imkanı", "Metrobüs yakını"]
   },
@@ -19,7 +19,7 @@ const branches = [
     address: "Kumburgaz Mahallesi, Sahil Yolu Caddesi No:28, Büyükçekmece / İstanbul",
     phone: "+90 (212) 000 00 01",
     whatsapp: "https://wa.me/902120000001",
-    email: "buyukcekmece@efesurucukursu.com",
+    email: "buyukcekmece@avcilarsurucukursu.com",
     hours: "Hafta içi: 09:00 - 21:00 | Cumartesi: 10:00 - 20:00",
     features: ["Geniş parkur alanı", "Sahil kenarı", "Ücretsiz otopark"]
   }
@@ -257,7 +257,7 @@ export default function Home() {
                   </span>
                 </div>
                 <h1 className="text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-5xl drop-shadow-lg">
-                  Avcılar ve Büyükçekmece&apos;de MEB onaylı sürücü kursu
+                  İstanbul&apos;da MEB onaylı sürücü kursu - Avcılar & Büyükçekmece
                 </h1>
                 <p className="max-w-xl text-base leading-relaxed text-white/90">
                   İstanbul Avrupa Yakası&apos;nda; teorik e‑sınav ve direksiyon sınavında yüksek başarı için kişiye özel program.
@@ -309,7 +309,7 @@ export default function Home() {
                   <div className="relative overflow-hidden rounded-[40px] border-4 border-white shadow-2xl">
                     <Image
                       src="/hero.jpg"
-                      alt="Efe Sürücü Kursu - Direksiyon Eğitimi"
+                      alt="Avcılar Sürücü Kursu - Direksiyon Eğitimi"
                       width={600}
                       height={400}
                       className="w-full h-[400px] object-cover"

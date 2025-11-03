@@ -9,15 +9,15 @@ export const buildAbsoluteUrl = (path: string = '/') => {
 };
 
 export const SITE_CONFIG = {
-  name: 'Efe Sürücü Kursu',
-  shortName: 'Efe Sürücü Kursu',
-  description: 'Avcılar ve Büyükçekmece\'de MEB onaylı sürücü kursu',
+  name: 'Avcılar Sürücü Kursu',
+  shortName: 'Avcılar Sürücü Kursu',
+  description: 'İstanbul Avcılar ve Büyükçekmece\'de MEB onaylı profesyonel sürücü kursu',
   logo: '/avcilarlogo.png',
   phone: {
     avcilar: '+90 212 000 00 00',
     buyukcekmece: '+90 212 000 00 01',
   },
-  email: 'info@efesurucukursu.example',
+  email: 'info@avcilarsurucukursu.com',
   address: {
     avcilar: {
       street: 'Ambarlı Mahallesi, Rıfat Ilgaz Sokak No:15/A',

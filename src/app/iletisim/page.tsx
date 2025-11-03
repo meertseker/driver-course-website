@@ -9,7 +9,7 @@ import { getPageMetadata } from '@/lib/seo';
 
 export const metadata: Metadata = getPageMetadata({
   title: 'İletişim',
-  description: 'Efe Sürücü Kursu ile iletişime geçin. Avcılar ve Büyükçekmece şubelerimizden bize ulaşabilirsiniz.',
+  description: 'Avcılar Sürücü Kursu ile iletişime geçin. İstanbul Avcılar ve Büyükçekmece şubelerimizden bize ulaşabilirsiniz.',
   url: '/iletisim',
   keywords: ['iletişim', 'adres', 'telefon', 'sürücü kursu iletişim', 'avcılar şube', 'büyükçekmece şube']
 });
@@ -20,7 +20,7 @@ const branches = [
     address: "Ambarlı Mahallesi, Rıfat Ilgaz Sokak No:15/A",
     city: "Avcılar / İstanbul",
     phone: "+90 (212) 000 00 00",
-    email: "avcilar@efesurucukursu.com",
+    email: "avcilar@avcilarsurucukursu.com",
     whatsapp: "https://wa.me/902120000000",
     hours: "Hafta içi: 09:00 - 21:00<br/>Cumartesi: 10:00 - 20:00<br/>Pazar: Kapalı",
     features: ["Modern sınıflar", "Otopark imkanı", "Metrobüs yakını"]
@@ -30,7 +30,7 @@ const branches = [
     address: "Kumburgaz Mahallesi, Sahil Yolu Caddesi No:28",
     city: "Büyükçekmece / İstanbul",
     phone: "+90 (212) 000 00 01",
-    email: "buyukcekmece@efesurucukursu.com",
+    email: "buyukcekmece@avcilarsurucukursu.com",
     whatsapp: "https://wa.me/902120000001",
     hours: "Hafta içi: 09:00 - 21:00<br/>Cumartesi: 10:00 - 20:00<br/>Pazar: Kapalı",
     features: ["Geniş parkur alanı", "Sahil kenarı", "Ücretsiz otopark"]
@@ -114,8 +114,8 @@ export default function IletisimPage() {
                   </div>
                   <div>
                     <div className="font-semibold text-gray-900 mb-1">E-posta</div>
-                    <a href="mailto:info@efesurucukursu.com" className="text-gray-600 hover:text-accent transition">
-                      info@efesurucukursu.com
+                    <a href="mailto:info@avcilarsurucukursu.com" className="text-gray-600 hover:text-accent transition">
+                      info@avcilarsurucukursu.com
                     </a>
                   </div>
                 </div>
