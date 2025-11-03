@@ -1,16 +1,29 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import Script from "next/script";
+import { Suspense } from "react";
 import "./globals.css";
+import { GA_TRACKING_ID } from "@/lib/analytics";
+import AnalyticsRouteTracker from "@/components/AnalyticsRouteTracker";
+import ScrollToTop from "@/components/ScrollToTop";
+import { generateDrivingSchoolSchema } from "@/lib/advanced-schema";
 
+// Font optimization with display swap and preload
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: 'swap',
+  preload: true,
+  fallback: ['system-ui', 'sans-serif'],
+  adjustFontFallback: true,
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: 'swap',
+  preload: false, // Mono font doesn't need preload
+  fallback: ['Courier New', 'monospace'],
 });
 
 export const metadata: Metadata = {
@@ -45,15 +58,26 @@ export const metadata: Metadata = {
     "direksiyon dersi",
     "e-sınav",
   ],
+  authors: [{ name: "Efe Sürücü Kursu" }],
+  creator: "Efe Sürücü Kursu",
+  publisher: "Efe Sürücü Kursu",
   robots: {
     index: true,
     follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
   },
-  themeColor: "#FFFFFF",
+  themeColor: "#1d68a9",
   viewport: {
     width: "device-width",
     initialScale: 1,
     maximumScale: 5,
+    viewportFit: "cover",
   },
   appleWebApp: {
     statusBarStyle: "default",
@@ -78,6 +102,8 @@ export const metadata: Metadata = {
   },
 };
 
+const drivingSchoolSchema = generateDrivingSchoolSchema();
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -85,10 +111,52 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="tr">
+      <head>
+        {/* PWA Manifest */}
+        <link rel="manifest" href="/manifest.json" />
+        
+        {/* DNS Prefetch for performance */}
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        <link rel="dns-prefetch" href="https://www.google-analytics.com" />
+        <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+        
+        {/* Preconnect for faster loading */}
+        <link rel="preconnect" href="https://www.google-analytics.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+
+        {/* Google Analytics */}
+        {GA_TRACKING_ID && GA_TRACKING_ID !== 'G-XXXXXXXXX' && (
+          <>
+            <Script
+              src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+              strategy="afterInteractive"
+            />
+            <Script id="ga-init" strategy="afterInteractive">
+              {`
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);} 
+                gtag('js', new Date());
+                gtag('config', '${GA_TRACKING_ID}', {
+                  page_path: window.location.pathname,
+                });
+              `}
+            </Script>
+          </>
+        )}
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        <Script id="jsonld-localbusiness" type="application/ld+json">
+        {/* Skip to Content Link for Accessibility */}
+        <a 
+          href="#main-content" 
+          className="sr-only focus:not-sr-only"
+        >
+          Ana içeriğe atla
+        </a>
+
+        {/* Structured Data Schema */}
+        <Script id="jsonld-organization" type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Organization",
@@ -141,7 +209,23 @@ export default function RootLayout({
             ]
           })}
         </Script>
-        {children}
+
+        <Script id="jsonld-driving-school" type="application/ld+json">
+          {JSON.stringify(drivingSchoolSchema)}
+        </Script>
+
+        {/* Analytics Route Tracker */}
+        <Suspense fallback={null}>
+          <AnalyticsRouteTracker />
+        </Suspense>
+
+        {/* Main Content */}
+        <main id="main-content">
+          {children}
+        </main>
+
+        {/* Scroll to Top Button */}
+        <ScrollToTop />
       </body>
     </html>
   );

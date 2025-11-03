@@ -1,39 +1,47 @@
 @import "tailwindcss";
 
 :root {
-  --background: #FFFFFF;
-  --foreground: #1A202C;
-  --primary: #4F9EF8;
+  --background: #1767ab;
+  --foreground: #FFFFFF;
+  --foreground-dark: #1A202C;
+  --primary: #1767ab;
   --primary-foreground: #FFFFFF;
-  --secondary: #9BC5F5;
+  --secondary: #2a7ec4;
   --secondary-foreground: #FFFFFF;
-  --accent: #FFA94D;
+  --accent: #eb8a4c;
   --accent-foreground: #FFFFFF;
-  --muted: #F7FAFC;
-  --muted-foreground: #334155;
+  --accent-dark: #eb642e;
+  --accent-red: #e23333;
+  --muted: #135a91;
+  --muted-foreground: #64748b;
+  --muted-foreground-light: #e0f2ff;
   --card: #FFFFFF;
   --card-foreground: #1A202C;
-  --border: #E2E8F0;
-  --success: #48D597;
-  --nav-accent: #3B82F6;
+  --border: rgba(255, 255, 255, 0.2);
+  --success: #10b981;
+  --nav-accent: #1767ab;
 }
 
 @theme inline {
-  --color-background: #FFFFFF;
-  --color-foreground: #1A202C;
-  --color-primary: #4F9EF8;
+  --color-background: #1767ab;
+  --color-foreground: #FFFFFF;
+  --color-foreground-dark: #1A202C;
+  --color-primary: #1767ab;
   --color-primary-foreground: #FFFFFF;
-  --color-secondary: #9BC5F5;
+  --color-secondary: #2a7ec4;
   --color-secondary-foreground: #FFFFFF;
-  --color-accent: #FFA94D;
+  --color-accent: #eb8a4c;
   --color-accent-foreground: #FFFFFF;
-  --color-muted: #F7FAFC;
-  --color-muted-foreground: #334155;
+  --color-accent-dark: #eb642e;
+  --color-accent-red: #e23333;
+  --color-muted: #135a91;
+  --color-muted-foreground: #64748b;
+  --color-muted-foreground-light: #e0f2ff;
   --color-card: #FFFFFF;
   --color-card-foreground: #1A202C;
-  --color-border: #E2E8F0;
-  --color-success: #48D597;
-  --color-nav-accent: #3B82F6;
+  --color-border: rgba(255, 255, 255, 0.2);
+  --color-success: #10b981;
+  --color-nav-accent: #1767ab;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -50,8 +58,227 @@
   }
 }
 
+html {
+  background: #1767ab;
+}
+
 body {
-  background: var(--background);
+  background: linear-gradient(135deg, #1767ab 0%, #2a7ec4 50%, #1767ab 100%);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  padding-top: env(safe-area-inset-top);
+  padding-bottom: env(safe-area-inset-bottom);
+  min-height: 100vh;
+}
+
+/* ===================================
+   ACCESSIBILITY & FOCUS STYLES
+   =================================== */
+
+/* Better focus indicators for keyboard users */
+*:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  box-shadow: 0 0 0 3px rgba(29, 104, 169, 0.3);
+}
+
+/* Skip to content link */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.focus\:not-sr-only:focus {
+  position: fixed;
+  top: 1rem;
+  left: 1rem;
+  width: auto;
+  height: auto;
+  padding: 0.75rem 1.5rem;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+  background: var(--color-primary);
+  color: var(--color-primary-foreground);
+  border-radius: 0.5rem;
+  z-index: 9999;
+  font-weight: 600;
+}
+
+/* ===================================
+   ANIMATIONS
+   =================================== */
+
+/* Fade In Up Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out forwards;
+}
+
+/* Slide In From Top */
+@keyframes slideInFromTop {
+  from {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in-top {
+  animation: slideInFromTop 0.3s ease-out forwards;
+}
+
+/* Slide In From Right */
+@keyframes slideInFromRight {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-in-right {
+  animation: slideInFromRight 0.3s ease-out forwards;
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Spin Animation */
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin {
+  animation: spin 1s linear infinite;
+}
+
+/* ===================================
+   PREFERS REDUCED MOTION
+   =================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ===================================
+   SMOOTH SCROLLING
+   =================================== */
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+/* ===================================
+   UTILITY CLASSES
+   =================================== */
+
+/* Backdrop blur */
+.backdrop-blur-sm {
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.backdrop-blur-md {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Transitions */
+.transition-all {
+  transition-property: all;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.transition-colors {
+  transition-property: color, background-color, border-color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.transition-transform {
+  transition-property: transform;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.transition-opacity {
+  transition-property: opacity;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
 }

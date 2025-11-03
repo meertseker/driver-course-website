@@ -36,10 +36,10 @@ export function ProgramTabs({ programs }: ProgramTabsProps) {
               key={program.id}
               type="button"
               onClick={() => setActiveProgram(program.id)}
-              className={`relative flex min-w-[200px] flex-1 flex-col items-start gap-2 rounded-3xl border px-6 py-5 text-left transition focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 ${
+              className={`relative flex min-w-[200px] flex-1 flex-col items-start gap-2 rounded-3xl border px-6 py-5 text-left transition focus:outline-none focus-visible:ring-2 focus-visible:ring-accent/60 ${
                 isActive
-                  ? "border-transparent bg-gradient-to-br from-primary to-blue-500 text-primary-foreground shadow-[0_20px_50px_rgba(79,158,248,0.35)]"
-                  : "border-2 border-border bg-card text-foreground hover:border-primary hover:text-primary"
+                  ? "border-transparent bg-gradient-to-br from-accent to-accent-dark text-white shadow-[0_20px_50px_rgba(235,138,76,0.35)]"
+                  : "border-2 border-gray-200 bg-card text-gray-900 hover:border-accent hover:text-accent"
               }`}
               aria-pressed={isActive}
             >
@@ -47,8 +47,8 @@ export function ProgramTabs({ programs }: ProgramTabsProps) {
                 <span
                   className={`inline-flex items-center rounded-full px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.3em] ${
                     isActive
-                      ? "bg-white/15 text-primary-foreground"
-                      : "bg-primary/10 text-primary"
+                      ? "bg-white/20 text-white"
+                      : "bg-accent/10 text-accent"
                   }`}
                 >
                   {program.badge}
@@ -59,7 +59,7 @@ export function ProgramTabs({ programs }: ProgramTabsProps) {
               </span>
               <span
                 className={`text-xs leading-relaxed ${
-                  isActive ? "text-primary-foreground/80" : "text-muted-foreground"
+                  isActive ? "text-white/90" : "text-gray-600"
                 }`}
               >
                 {program.summary}
@@ -73,21 +73,21 @@ export function ProgramTabs({ programs }: ProgramTabsProps) {
         <div className="flex-1 rounded-[32px] border border-border/60 bg-white/80 backdrop-blur-md p-10 shadow-[0_30px_85px_rgba(79,158,248,0.15)]">
           <div className="flex flex-col gap-6 lg:flex-row lg:items-start lg:justify-between">
             <div className="space-y-3">
-              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">
+              <p className="text-xs font-semibold uppercase tracking-[0.3em] text-accent">
                 Program Özeti
               </p>
-              <h3 className="text-2xl font-bold text-foreground">
+              <h3 className="text-2xl font-bold text-gray-900">
                 {selected.name}
               </h3>
-              <p className="max-w-xl text-sm leading-relaxed text-muted-foreground">
+              <p className="max-w-xl text-sm leading-relaxed text-gray-600">
                 {selected.summary}
               </p>
             </div>
             <div className="flex flex-col items-end gap-2 text-right">
-              <span className="rounded-full bg-primary/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-primary">
+              <span className="rounded-full bg-accent/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-accent">
                 {selected.duration}
               </span>
-              <span className="text-sm font-semibold text-foreground">
+              <span className="text-sm font-semibold text-gray-900">
                 {selected.price}
               </span>
             </div>
@@ -104,19 +104,19 @@ export function ProgramTabs({ programs }: ProgramTabsProps) {
                   <span className="inline-flex h-8 w-8 items-center justify-center rounded-full bg-success/10 text-sm font-semibold text-success">
                     ✓
                   </span>
-                  <span className="text-sm font-medium text-foreground">{feature}</span>
+                  <span className="text-sm font-medium text-gray-900">{feature}</span>
                 </div>
               </div>
             ))}
           </div>
 
-          <div className="mt-10 flex flex-col gap-4 border-t border-border pt-6 sm:flex-row sm:items-center sm:justify-between">
-            <p className="text-sm text-muted-foreground">
+          <div className="mt-10 flex flex-col gap-4 border-t border-gray-200 pt-6 sm:flex-row sm:items-center sm:justify-between">
+            <p className="text-sm text-gray-600">
               Program hakkında detaylı bilgi ve kişiye özel ödeme planı için danışmanlarımızla iletişime geçin.
             </p>
             <Link
               href={selected.href}
-              className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-primary to-blue-500 px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-primary-foreground shadow-[0_18px_40px_rgba(79,158,248,0.3)] transition hover:shadow-[0_20px_45px_rgba(79,158,248,0.4)]"
+              className="inline-flex items-center justify-center rounded-full bg-gradient-to-r from-accent-red to-accent-dark px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-primary-foreground shadow-[0_18px_40px_rgba(226,51,51,0.3)] transition hover:shadow-[0_20px_45px_rgba(226,51,51,0.4)]"
             >
               {selected.cta}
             </Link>

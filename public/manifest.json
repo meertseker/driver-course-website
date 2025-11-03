@@ -1,0 +1,22 @@
+{
+  "name": "Efe Sürücü Kursu - Avcılar & Büyükçekmece",
+  "short_name": "Efe Sürücü Kursu",
+  "description": "Avcılar ve Büyükçekmece'de MEB onaylı sürücü kursu - Tüm sınıflarda ehliyet eğitimi",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#FFFFFF",
+  "theme_color": "#1d68a9",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/avcilarlogo.png",
+      "sizes": "any",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education", "business"],
+  "lang": "tr",
+  "dir": "ltr"
+}
+
