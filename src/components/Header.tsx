@@ -10,6 +10,7 @@ const navLinks = [
   { label: "Hakkımızda", href: "/hakkimizda" },
   { label: "Şubelerimiz", href: "/subelerimiz" },
   { label: "Programlar", href: "/programlar" },
+  { label: "Blog", href: "/blog" },
   { label: "SSS", href: "/sss" },
   { label: "İletişim", href: "/iletisim" },
 ];
@@ -37,20 +38,23 @@ export default function Header() {
 
         {/* Desktop Navigation */}
         <nav className="hidden items-center gap-8 text-sm font-medium md:flex">
-          {navLinks.map((link) => (
-            <Link
-              key={link.label}
-              href={link.href}
-              className={`relative text-gray-700 transition-colors hover:text-primary ${
-                pathname === link.href ? 'text-primary' : ''
-              }`}
-            >
-              {link.label}
-              {pathname === link.href && (
-                <span className="absolute inset-x-0 -bottom-2 h-0.5 rounded-full bg-primary" />
-              )}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            const isActive = pathname === link.href || (link.href !== '/' && pathname?.startsWith(link.href + '/'));
+            return (
+              <Link
+                key={link.label}
+                href={link.href}
+                className={`relative text-gray-700 transition-colors hover:text-primary ${
+                  isActive ? 'text-primary' : ''
+                }`}
+              >
+                {link.label}
+                {isActive && (
+                  <span className="absolute inset-x-0 -bottom-2 h-0.5 rounded-full bg-primary" />
+                )}
+              </Link>
+            );
+          })}
         </nav>
 
         {/* Desktop CTA */}
@@ -97,20 +101,23 @@ export default function Header() {
             className="absolute inset-x-0 top-full md:hidden bg-white border-b border-border shadow-lg animate-slide-in-top z-40"
           >
             <div className="px-6 py-4 flex flex-col gap-3">
-              {navLinks.map((link) => (
-                <Link
-                  key={link.label}
-                  href={link.href}
-                  onClick={closeMobile}
-                  className={`block px-4 py-3 rounded-lg font-semibold transition ${
-                    pathname === link.href
-                      ? 'bg-primary text-white'
-                      : 'text-gray-700 hover:bg-gray-100'
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              ))}
+              {navLinks.map((link) => {
+                const isActive = pathname === link.href || (link.href !== '/' && pathname?.startsWith(link.href + '/'));
+                return (
+                  <Link
+                    key={link.label}
+                    href={link.href}
+                    onClick={closeMobile}
+                    className={`block px-4 py-3 rounded-lg font-semibold transition ${
+                      isActive
+                        ? 'bg-primary text-white'
+                        : 'text-gray-700 hover:bg-gray-100'
+                    }`}
+                  >
+                    {link.label}
+                  </Link>
+                );
+              })}
               <div className="pt-3 border-t border-border flex flex-col gap-2">
                 <a
                   href="tel:+902120000000"

@@ -137,10 +137,10 @@ export default function ProgramlarPage() {
           <span className="inline-flex items-center gap-2 rounded-full bg-accent/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-accent mb-6">
             Eğitim Programları
           </span>
-          <h1 className="text-4xl font-bold text-gray-900 mb-4 md:text-5xl">
+          <h1 className="text-4xl font-bold text-white mb-4 md:text-5xl">
             İhtiyacınıza göre ölçeklenen program yapısı
           </h1>
-          <p className="text-lg text-gray-800 max-w-3xl mx-auto font-medium">
+          <p className="text-lg text-white/90 max-w-3xl mx-auto font-medium">
             Kişisel hızınıza, mevcut deneyiminize ve takvim ihtiyaçlarınıza göre düzenlenen program 
             modüllerini seçin; kalanını eğitim danışmanlarımız planlasın.
           </p>

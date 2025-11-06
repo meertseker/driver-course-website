@@ -87,10 +87,10 @@ export default function SSSPage() {
           <span className="inline-flex items-center gap-2 rounded-full bg-accent/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-accent mb-6">
             Yardım & Destek
           </span>
-          <h1 className="text-4xl font-bold text-gray-900 mb-4 md:text-5xl">
+          <h1 className="text-4xl font-bold text-white mb-4 md:text-5xl">
             Sıkça Sorulan Sorular
           </h1>
-          <p className="text-lg text-gray-800 max-w-3xl mx-auto font-medium">
+          <p className="text-lg text-white/90 max-w-3xl mx-auto font-medium">
             Avcılar Sürücü Kursu hakkında en çok merak edilen soruların cevaplarını burada bulabilirsiniz. 
             Daha fazla bilgi için bizimle <Link href="/iletisim" className="text-accent hover:underline font-semibold">iletişime</Link> geçebilirsiniz.
           </p>

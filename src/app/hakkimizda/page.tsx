@@ -56,10 +56,10 @@ export default function HakkimizdaPage() {
           <span className="inline-flex items-center gap-2 rounded-full bg-accent/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-accent mb-6">
             Biz Kimiz?
           </span>
-          <h1 className="text-4xl font-bold text-gray-900 mb-6 md:text-5xl">
+          <h1 className="text-4xl font-bold text-white mb-6 md:text-5xl">
             15 yıldır güvenli sürücü yetiştiriyoruz
           </h1>
-          <p className="text-lg text-gray-800 max-w-3xl mx-auto leading-relaxed font-medium">
+          <p className="text-lg text-white/90 max-w-3xl mx-auto leading-relaxed font-medium">
             2009 yılından bu yana İstanbul Avcılar ve Büyükçekmece&apos;de faaliyet gösteren Avcılar Sürücü Kursu, 
             sadece ehliyet kazandırmakla kalmayıp, trafikte doğru reflekslere sahip, sorumlu ve 
             güvenli sürücüler yetiştirme misyonuyla hizmet vermektedir.
@@ -68,7 +68,7 @@ export default function HakkimizdaPage() {
 
         {/* Values Grid */}
         <section className="mb-20">
-          <h2 className="text-4xl font-bold text-gray-900 mb-12 text-center drop-shadow-sm">
+          <h2 className="text-4xl font-bold text-white mb-12 text-center drop-shadow-sm">
             Değerlerimiz
           </h2>
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
@@ -92,7 +92,7 @@ export default function HakkimizdaPage() {
 
         {/* Timeline */}
         <section className="mb-20">
-          <h2 className="text-3xl font-bold text-gray-900 mb-12 text-center">
+          <h2 className="text-3xl font-bold text-white mb-12 text-center">
             Yolculuğumuz
           </h2>
           <div className="relative">
@@ -154,10 +154,10 @@ export default function HakkimizdaPage() {
 
         {/* CTA */}
         <div className="text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-6">
+          <h2 className="text-3xl font-bold text-white mb-6">
             Siz de aramıza katılın!
           </h2>
-          <p className="text-lg text-gray-800 mb-8 max-w-2xl mx-auto font-medium">
+          <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto font-medium">
             15 yıllık deneyimimiz ve başarı odaklı eğitim yaklaşımımızla güvenli sürücü olma yolculuğunuzda yanınızdayız.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

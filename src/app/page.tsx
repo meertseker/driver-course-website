@@ -223,13 +223,13 @@ const articles = [
   {
     title: "2025 Ehliyet Sınav Sistemindeki Değişiklikler",
     category: "Trafik Güncellemeleri",
-    href: "#",
+    href: "/blog/2025-ehliyet-sinav-sistemindeki-degisiklikler",
     readingTime: "6 dakikalık okuma",
   },
   {
     title: "Direksiyon Sınavında Stresi Azaltmanın 5 Yolu",
     category: "Sınav Taktikleri",
-    href: "#",
+    href: "/blog/direksiyon-sinavinda-stresi-azaltmanin-5-yolu",
     readingTime: "4 dakikalık okuma",
   },
 ];
@@ -426,7 +426,7 @@ export default function Home() {
                 <span className="inline-flex items-center gap-2 rounded-full bg-accent/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-accent">
                   Güvenilirlik
                 </span>
-                <h2 className="mt-4 text-3xl font-bold text-gray-900 md:text-4xl">
+                <h2 className="mt-4 text-3xl font-bold text-white md:text-4xl">
                   Başarı hikayeleri ile kanıtlanan uzman eğitim
                 </h2>
               </div>
@@ -539,10 +539,10 @@ export default function Home() {
                 <span className="inline-flex items-center gap-2 rounded-full bg-accent/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-accent">
                   Şubelerimiz
                 </span>
-                <h2 className="text-3xl font-bold text-gray-900 md:text-4xl">
+                <h2 className="text-3xl font-bold text-white md:text-4xl">
                   İstanbul Avrupa Yakası&apos;nda 2 Şube
                 </h2>
-                <p className="max-w-3xl text-base text-gray-800 font-medium">
+                <p className="max-w-3xl text-base text-white/90 font-medium">
                   Size en yakın şubemizden profesyonel eğitim alın.
                 </p>
               </div>
@@ -621,10 +621,10 @@ export default function Home() {
               </span>
               <div className="flex flex-col gap-4 md:flex-row md:items-end md:justify-between">
                 <div className="space-y-2">
-                  <h2 className="text-3xl font-bold text-gray-900 md:text-4xl">
+                  <h2 className="text-3xl font-bold text-white md:text-4xl">
                     Tüm Sınıflar İçin Eğitim Programları
                   </h2>
-                  <p className="max-w-2xl text-sm text-gray-800 font-medium">
+                  <p className="max-w-2xl text-sm text-white/90 font-medium">
                     A&apos;dan D&apos;ye, motosiklet ve ağır vasıta dahil tüm ehliyet sınıfları
                   </p>
                 </div>
@@ -646,7 +646,7 @@ export default function Home() {
                 <span className="inline-flex items-center gap-2 rounded-full bg-accent/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-accent">
                   Süreç
                 </span>
-                <h2 className="text-3xl font-bold text-gray-900 md:text-4xl">
+                <h2 className="text-3xl font-bold text-white md:text-4xl">
                   4 Adımda Ehliyet Sahibi Olun
                 </h2>
               </div>
@@ -697,8 +697,8 @@ export default function Home() {
 
                       {/* İçerik */}
                       <div className="space-y-2">
-                        <h3 className="text-base font-bold text-gray-900">{step.title}</h3>
-                        <p className="text-sm text-gray-800 font-medium">{step.description}</p>
+                        <h3 className="text-base font-bold text-white">{step.title}</h3>
+                        <p className="text-sm text-white/90 font-medium">{step.description}</p>
                       </div>
                     </div>
                   ))}
@@ -713,10 +713,10 @@ export default function Home() {
                 <span className="inline-flex items-center gap-2 rounded-full bg-accent/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-accent">
                   Sosyal Kanıt
                 </span>
-                <h2 className="text-3xl font-bold text-gray-900 md:text-4xl">
+                <h2 className="text-3xl font-bold text-white md:text-4xl">
                   Kursiyerlerimiz neler söylüyor?
                 </h2>
-                <p className="text-base text-gray-800 font-medium">
+                <p className="text-base text-white/90 font-medium">
                   Son mezunlarımızdan başarı hikayeleri
                 </p>
                 
@@ -846,16 +846,16 @@ export default function Home() {
                 </span>
                 <div className="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
                   <div className="space-y-2">
-                    <h2 className="text-3xl font-bold text-gray-900 md:text-4xl">
+                    <h2 className="text-3xl font-bold text-white md:text-4xl">
                       Sürüş İpuçları & Güncel Haberler
                     </h2>
-                    <p className="max-w-2xl text-sm text-gray-800 font-medium">
+                    <p className="max-w-2xl text-sm text-white/90 font-medium">
                       Sınav taktikleri ve yasa değişiklikleri
                     </p>
                   </div>
                   <Link
-                    href="#"
-                    className="inline-flex items-center justify-center rounded-full border-2 border-primary px-6 py-3 text-sm font-semibold text-primary transition hover:bg-primary hover:text-primary-foreground md:self-start"
+                    href="/blog"
+                    className="inline-flex items-center justify-center rounded-full border-2 border-white px-6 py-3 text-sm font-semibold text-white transition hover:bg-white hover:text-primary md:self-start"
                   >
                     Tüm Yazılar
                   </Link>

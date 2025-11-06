@@ -1,47 +1,47 @@
 @import "tailwindcss";
 
 :root {
-  --background: #1767ab;
+  --background: #0a3a66;
   --foreground: #FFFFFF;
   --foreground-dark: #1A202C;
-  --primary: #1767ab;
+  --primary: #0a3a66;
   --primary-foreground: #FFFFFF;
-  --secondary: #2a7ec4;
+  --secondary: #0f5287;
   --secondary-foreground: #FFFFFF;
   --accent: #eb8a4c;
   --accent-foreground: #FFFFFF;
   --accent-dark: #eb642e;
   --accent-red: #e23333;
-  --muted: #135a91;
+  --muted: #083156;
   --muted-foreground: #64748b;
   --muted-foreground-light: #e0f2ff;
   --card: #FFFFFF;
   --card-foreground: #1A202C;
   --border: rgba(255, 255, 255, 0.2);
   --success: #10b981;
-  --nav-accent: #1767ab;
+  --nav-accent: #0a3a66;
 }
 
 @theme inline {
-  --color-background: #1767ab;
+  --color-background: #0a3a66;
   --color-foreground: #FFFFFF;
   --color-foreground-dark: #1A202C;
-  --color-primary: #1767ab;
+  --color-primary: #0a3a66;
   --color-primary-foreground: #FFFFFF;
-  --color-secondary: #2a7ec4;
+  --color-secondary: #0f5287;
   --color-secondary-foreground: #FFFFFF;
   --color-accent: #eb8a4c;
   --color-accent-foreground: #FFFFFF;
   --color-accent-dark: #eb642e;
   --color-accent-red: #e23333;
-  --color-muted: #135a91;
+  --color-muted: #083156;
   --color-muted-foreground: #64748b;
   --color-muted-foreground-light: #e0f2ff;
   --color-card: #FFFFFF;
   --color-card-foreground: #1A202C;
   --color-border: rgba(255, 255, 255, 0.2);
   --color-success: #10b981;
-  --color-nav-accent: #1767ab;
+  --color-nav-accent: #0a3a66;
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -59,11 +59,11 @@
 }
 
 html {
-  background: #1767ab;
+  background: #0a3a66;
 }
 
 body {
-  background: linear-gradient(135deg, #1767ab 0%, #2a7ec4 50%, #1767ab 100%);
+  background: linear-gradient(135deg, #0a3a66 0%, #0f5287 50%, #0a3a66 100%);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
   padding-top: env(safe-area-inset-top);

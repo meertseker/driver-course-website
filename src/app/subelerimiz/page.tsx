@@ -69,10 +69,10 @@ export default function SubelerimizPage() {
           <span className="inline-flex items-center gap-2 rounded-full bg-accent/10 px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-accent mb-6">
             Konumlarımız
           </span>
-          <h1 className="text-4xl font-bold text-gray-900 mb-4 md:text-5xl">
+          <h1 className="text-4xl font-bold text-white mb-4 md:text-5xl">
             İstanbul Avrupa Yakası&apos;nda 2 Şube
           </h1>
-          <p className="text-lg text-gray-800 max-w-3xl mx-auto font-medium">
+          <p className="text-lg text-white/90 max-w-3xl mx-auto font-medium">
             Size en yakın şubemizden profesyonel eğitim alın. Her iki şubemizde de aynı kaliteli hizmet ve modern olanaklar.
           </p>
         </div>
