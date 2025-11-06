@@ -14,7 +14,7 @@ export default function Footer() {
             className="h-12 w-auto mb-4"
           />
           <p className="text-sm text-gray-600">
-            Avcılar Sürücü Kursu, İstanbul'da profesyonel sürüş eğitimiyle güvenli sürücü yetiştirmenin en hızlı yolu.
+            Avcılar Sürücü Kursu, İstanbul&apos;da profesyonel sürüş eğitimiyle güvenli sürücü yetiştirmenin en hızlı yolu.
           </p>
         </div>
         

@@ -14,11 +14,19 @@ const generateSitemap = () => {
     { url: '/programlar', priority: 0.9, changefreq: 'weekly' },
     { url: '/iletisim', priority: 0.7, changefreq: 'monthly' },
     { url: '/sss', priority: 0.6, changefreq: 'monthly' },
+    { url: '/blog', priority: 0.8, changefreq: 'weekly' },
+    { url: '/kvkk', priority: 0.5, changefreq: 'yearly' },
+    { url: '/gizlilik', priority: 0.5, changefreq: 'yearly' },
   ];
 
-  // Dynamic pages (add your dynamic routes here)
+  // Dynamic pages (blog articles)
   const dynamicPages = [
-    // Example: { url: '/blog/post-1', priority: 0.7, changefreq: 'monthly' },
+    { url: '/blog/2025-ehliyet-sinav-sistemindeki-degisiklikler', priority: 0.7, changefreq: 'monthly' },
+    { url: '/blog/direksiyon-sinavinda-stresi-azaltmanin-5-yolu', priority: 0.7, changefreq: 'monthly' },
+    { url: '/blog/kis-sartlarinda-guvenli-surus-ipuclari', priority: 0.7, changefreq: 'monthly' },
+    { url: '/blog/teorik-sinava-nasil-hazirlanilir', priority: 0.7, changefreq: 'monthly' },
+    { url: '/blog/park-manevralari-rehberi', priority: 0.7, changefreq: 'monthly' },
+    { url: '/blog/yeni-baslayanlara-sehir-ici-surus-tavsiyeleri', priority: 0.7, changefreq: 'monthly' },
   ];
 
   const allPages = [...staticPages, ...dynamicPages];
