@@ -4,7 +4,7 @@ export const articles = [
     title: "2025 Ehliyet Sınav Sistemindeki Değişiklikler",
     excerpt: "2025 yılında ehliyet sınav sisteminde yapılan yeni düzenlemeler ve değişiklikleri detaylı olarak inceliyoruz.",
     category: "Trafik Güncellemeleri",
-    image: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1559526324-593bc073d938?w=800&h=400&fit=crop&q=80",
     date: "5 Ocak 2025",
     readingTime: "6 dakikalık okuma",
     author: "Ahmet Yılmaz"
@@ -14,7 +14,7 @@ export const articles = [
     title: "Direksiyon Sınavında Stresi Azaltmanın 5 Yolu",
     excerpt: "Direksiyon sınavı öncesi heyecan ve stresi azaltmak için etkili yöntemler ve uzman önerileri.",
     category: "Sınav Taktikleri",
-    image: "https://images.unsplash.com/photo-1621939514649-280e2ee25f60?w=800&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=800&h=400&fit=crop&q=80",
     date: "28 Aralık 2024",
     readingTime: "4 dakikalık okuma",
     author: "Elif Demir"
@@ -24,7 +24,7 @@ export const articles = [
     title: "Kış Şartlarında Güvenli Sürüş İpuçları",
     excerpt: "Karlı ve buzlu yollarda güvenli sürüş için bilmeniz gereken önemli noktalar ve teknikler.",
     category: "Güvenli Sürüş",
-    image: "https://images.unsplash.com/photo-1548771766-389936e4649d?w=800&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1485070895238-b90dbb2f36d4?w=800&h=400&fit=crop&q=80",
     date: "15 Aralık 2024",
     readingTime: "7 dakikalık okuma",
     author: "Mehmet Kaya"
@@ -34,7 +34,7 @@ export const articles = [
     title: "Teorik Sınava Nasıl Hazırlanılır?",
     excerpt: "Teorik ehliyet sınavında başarılı olmanız için sistematik çalışma yöntemleri ve öneriler.",
     category: "Sınav Taktikleri",
-    image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=800&h=400&fit=crop&q=80",
     date: "10 Aralık 2024",
     readingTime: "5 dakikalık okuma",
     author: "Ayşe Yıldız"
@@ -44,7 +44,7 @@ export const articles = [
     title: "Park Manevraları Rehberi: L ve Garaj Park",
     excerpt: "L park ve garaj park manevralarını kolayca yapmanız için adım adım görsel rehber.",
     category: "Sürüş Teknikleri",
-    image: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=800&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1590674899484-d5640e854abe?w=800&h=400&fit=crop&q=80",
     date: "3 Aralık 2024",
     readingTime: "8 dakikalık okuma",
     author: "Can Öztürk"
@@ -54,7 +54,7 @@ export const articles = [
     title: "Yeni Başlayanlara Şehir İçi Sürüş Tavsiyeleri",
     excerpt: "İlk kez şehir trafiğine çıkacaklar için bilmesi gereken önemli noktalar ve püf noktaları.",
     category: "Yeni Sürücüler",
-    image: "https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=800&h=400&fit=crop",
+    image: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=800&h=400&fit=crop&q=80",
     date: "25 Kasım 2024",
     readingTime: "6 dakikalık okuma",
     author: "Zeynep Arslan"
@@ -272,5 +272,7 @@ export const articleContents: { [key: string]: { sections: Array<{ title: string
     ]
   }
 };
+
+
 
 

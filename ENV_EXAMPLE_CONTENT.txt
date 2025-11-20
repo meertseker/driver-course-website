@@ -1,0 +1,72 @@
+# ============================================
+# .env.local DOSYASI İÇİN GEREKLI İÇERİK
+# ============================================
+# Bu dosyayı root dizinde .env.local olarak kaydedin
+# .gitignore'da olduğu için git'e commit edilmeyecek
+
+# ============================================
+# SITE CONFIGURATION
+# ============================================
+# Your production website URL (no trailing slash)
+NEXT_PUBLIC_SITE_URL=https://www.avcilarsurucukursu.com
+
+# Google Search Console verification code (optional)
+# Get this from: https://search.google.com/search-console
+NEXT_PUBLIC_GOOGLE_VERIFICATION=your-google-verification-code
+
+# ============================================
+# ANALYTICS
+# ============================================
+# Google Analytics 4 Measurement ID
+# Get this from: https://analytics.google.com/
+# Format: G-XXXXXXXXXX
+NEXT_PUBLIC_GA_TRACKING_ID=G-XXXXXXXXXX
+
+# ============================================
+# CONTACT FORM
+# ============================================
+# Choose ONE of the following options:
+
+# OPTION 1: Formspree (Recommended - Easy setup)
+# Sign up at: https://formspree.io/
+# Create a form and paste the endpoint URL here
+FORMSPREE_ENDPOINT=https://formspree.io/f/your-form-id
+
+# OPTION 2: Resend (Email API)
+# Sign up at: https://resend.com/
+# Get your API key from dashboard
+# RESEND_API_KEY=re_xxxxxxxxxxxxxxxxxxxx
+# CONTACT_EMAIL=info@avcilarsurucukursu.com
+
+# OPTION 3: SendGrid (Email API)
+# Sign up at: https://sendgrid.com/
+# Get your API key from dashboard
+# SENDGRID_API_KEY=SG.xxxxxxxxxxxxxxxxxxxx
+# CONTACT_EMAIL=info@avcilarsurucukursu.com
+
+# ============================================
+# DEPLOYMENT PLATFORM
+# ============================================
+# These are usually set automatically by your hosting platform
+# Uncomment if needed for your specific platform
+
+# Vercel
+# VERCEL_URL=auto-set-by-vercel
+
+# AWS Amplify
+# AWS_BRANCH=main
+# AWS_APP_ID=auto-set-by-amplify
+
+# ============================================
+# OPTIONAL: DATABASE (if needed in future)
+# ============================================
+# DATABASE_URL=your-database-connection-string
+
+# ============================================
+# SECURITY (Optional)
+# ============================================
+# Secret key for encrypting sensitive data (generate a random string)
+# SECRET_KEY=your-random-secret-key-here
+
+
+

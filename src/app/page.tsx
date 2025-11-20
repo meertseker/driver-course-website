@@ -308,7 +308,7 @@ export default function Home() {
                   <div className="absolute -inset-2 bg-gradient-to-r from-accent-red via-accent to-accent-dark rounded-[40px] opacity-60 blur-xl group-hover:opacity-80 transition duration-500" />
                   <div className="relative overflow-hidden rounded-[40px] border-4 border-white shadow-2xl">
                     <Image
-                      src="/hero.jpg"
+                      src="https://images.unsplash.com/photo-1489824904134-891ab64532f1?w=600&h=400&fit=crop&q=80"
                       alt="Avcılar Sürücü Kursu - Direksiyon Eğitimi"
                       width={600}
                       height={400}
@@ -329,7 +329,7 @@ export default function Home() {
                   <div className="relative group overflow-hidden rounded-[30px] border-3 border-white shadow-xl transform hover:scale-105 transition duration-300">
                     <div className="absolute inset-0 bg-gradient-to-br from-accent-red/20 to-transparent" />
                     <Image
-                      src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=300&h=200&fit=crop"
+                      src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=300&h=200&fit=crop&q=80"
                       alt="Profesyonel Eğitmenler"
                       width={200}
                       height={150}
@@ -344,7 +344,7 @@ export default function Home() {
                   <div className="relative group overflow-hidden rounded-full border-4 border-accent shadow-xl transform hover:scale-105 transition duration-300">
                     <div className="absolute inset-0 bg-gradient-to-br from-accent/20 to-transparent" />
                     <Image
-                      src="https://images.unsplash.com/photo-1485463611174-f302f6a5c1c9?w=300&h=300&fit=crop"
+                      src="https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=300&h=300&fit=crop&q=80"
                       alt="Sınav Başarısı"
                       width={200}
                       height={200}
@@ -359,7 +359,7 @@ export default function Home() {
                   <div className="relative group overflow-hidden rounded-[30px] border-3 border-white shadow-xl transform hover:scale-105 transition duration-300">
                     <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-transparent" />
                     <Image
-                      src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=300&h=200&fit=crop"
+                      src="https://images.unsplash.com/photo-1529070538774-1843cb3265df?w=300&h=200&fit=crop&q=80"
                       alt="Mutlu Öğrenciler"
                       width={200}
                       height={150}
@@ -385,9 +385,9 @@ export default function Home() {
                   <div className="relative h-[140px] overflow-hidden">
                     <Image
                       src={
-                        idx === 0 ? "https://images.unsplash.com/photo-1506784983877-45594efa4cbe?w=400&h=200&fit=crop" :
-                        idx === 1 ? "https://images.unsplash.com/photo-1611746872915-64382b5c76da?w=400&h=200&fit=crop" :
-                        "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=200&fit=crop"
+                        idx === 0 ? "https://images.unsplash.com/photo-1506784926709-22f1ec395907?w=400&h=200&fit=crop&q=80" :
+                        idx === 1 ? "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=400&h=200&fit=crop&q=80" :
+                        "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&h=200&fit=crop&q=80"
                       }
                       alt={item.title}
                       width={400}
@@ -440,7 +440,7 @@ export default function Home() {
                     <div className="absolute -inset-1 bg-gradient-to-r from-primary via-secondary to-primary rounded-[30px] opacity-50 blur-lg group-hover:opacity-70 transition" />
                     <div className="relative overflow-hidden rounded-[30px] border-3 border-white shadow-2xl">
                       <Image
-                        src="https://images.unsplash.com/photo-1583121274602-3e2820c69888?w=600&h=400&fit=crop"
+                        src="https://images.unsplash.com/photo-1619405399517-d7fce0f13302?w=600&h=400&fit=crop&q=80"
                         alt="Modern Araç Filosu"
                         width={600}
                         height={400}
@@ -458,7 +458,7 @@ export default function Home() {
                   <div className="grid grid-cols-2 gap-4">
                     <div className="relative group overflow-hidden rounded-[25px] border-2 border-accent shadow-xl transform hover:rotate-2 transition duration-300">
                       <Image
-                        src="https://images.unsplash.com/photo-1552519507-da3b142c6e3d?w=300&h=200&fit=crop"
+                        src="https://images.unsplash.com/photo-1590674899484-d5640e854abe?w=300&h=200&fit=crop&q=80"
                         alt="Otopark Eğitimi"
                         width={300}
                         height={200}
@@ -470,7 +470,7 @@ export default function Home() {
                     </div>
                     <div className="relative group overflow-hidden rounded-[25px] border-2 border-primary shadow-xl transform hover:-rotate-2 transition duration-300">
                       <Image
-                        src="https://images.unsplash.com/photo-1568605117036-5fe5e7bab0b7?w=300&h=200&fit=crop"
+                        src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=300&h=200&fit=crop&q=80"
                         alt="Şehir İçi Sürüş"
                         width={300}
                         height={200}
@@ -556,8 +556,8 @@ export default function Home() {
                     <div className="relative overflow-hidden h-[220px]">
                       <Image
                         src={idx === 0 
-                          ? "https://images.unsplash.com/photo-1497366811353-6870744d04b2?w=600&h=300&fit=crop"
-                          : "https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=600&h=300&fit=crop"
+                          ? "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=300&fit=crop&q=80"
+                          : "https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=300&fit=crop&q=80"
                         }
                         alt={branch.name}
                         width={600}
@@ -677,10 +677,10 @@ export default function Home() {
                         }`}>
                           <Image
                             src={
-                              index === 0 ? "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=150&h=150&fit=crop" :
-                              index === 1 ? "https://images.unsplash.com/photo-1497633762265-9d179a990aa6?w=150&h=150&fit=crop" :
-                              index === 2 ? "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=150&h=150&fit=crop" :
-                              "https://images.unsplash.com/photo-1529068755536-a5ade0dcb4e8?w=150&h=150&fit=crop"
+                              index === 0 ? "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=150&h=150&fit=crop&q=80" :
+                              index === 1 ? "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=150&h=150&fit=crop&q=80" :
+                              index === 2 ? "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=150&h=150&fit=crop&q=80" :
+                              "https://images.unsplash.com/photo-1515169067868-5387ec356754?w=150&h=150&fit=crop&q=80"
                             }
                             alt={step.title}
                             width={128}
@@ -788,7 +788,7 @@ export default function Home() {
                   {/* Sınav İllüstrasyonu */}
                   <div className="relative h-[180px] rounded-[20px] overflow-hidden border-2 border-primary/20">
                     <Image
-                      src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400&h=200&fit=crop"
+                      src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=400&h=200&fit=crop&q=80"
                       alt="Online Deneme Sınavı"
                       width={400}
                       height={200}
@@ -872,8 +872,8 @@ export default function Home() {
                     <div className="relative h-[200px] overflow-hidden">
                       <Image
                         src={idx === 0 
-                          ? "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=600&h=300&fit=crop"
-                          : "https://images.unsplash.com/photo-1621939514649-280e2ee25f60?w=600&h=300&fit=crop"
+                          ? "https://images.unsplash.com/photo-1559526324-593bc073d938?w=600&h=300&fit=crop&q=80"
+                          : "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?w=600&h=300&fit=crop&q=80"
                         }
                         alt={article.title}
                         width={600}
