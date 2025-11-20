@@ -281,7 +281,7 @@ export default function Home() {
                   <div className="group relative overflow-hidden rounded-3xl border border-white/30 bg-white/95 backdrop-blur-sm p-4 shadow-xl transition hover:-translate-y-1 hover:shadow-2xl">
                     <div className="absolute right-0 top-0 h-16 w-16 translate-x-6 -translate-y-6 rounded-full bg-[radial-gradient(circle,_rgba(235,100,46,0.2)_0%,_rgba(235,100,46,0)_70%)]" />
                     <div className="relative">
-                      <p className="text-2xl font-bold text-accent-red">+3500</p>
+                      <p className="text-2xl font-bold text-accent-red">+15000</p>
                       <p className="text-xs font-medium text-gray-800">mezun sürücü</p>
                     </div>
                   </div>

@@ -111,8 +111,8 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/avcilarlogo.png", sizes: "any", type: "image/png" },
-      { url: "/icon.png", sizes: "any", type: "image/png" },
+      { url: "/avcilarlogo.png", sizes: "32x32", type: "image/png" },
+      { url: "/avcilarlogo.png", sizes: "16x16", type: "image/png" },
     ],
     shortcut: "/avcilarlogo.png",
     apple: "/avcilarlogo.png",
@@ -129,6 +129,11 @@ export default function RootLayout({
   return (
     <html lang="tr">
       <head>
+        {/* Favicon */}
+        <link rel="icon" type="image/png" href="/avcilarlogo.png" />
+        <link rel="shortcut icon" type="image/png" href="/avcilarlogo.png" />
+        <link rel="apple-touch-icon" href="/avcilarlogo.png" />
+        
         {/* PWA Manifest */}
         <link rel="manifest" href="/manifest.json" />
         
