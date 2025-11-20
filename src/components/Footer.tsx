@@ -22,8 +22,13 @@ export default function Footer() {
           <h4 className="text-sm font-bold text-gray-900 mb-4">Avcılar Şubesi</h4>
           <ul className="space-y-2 text-sm text-gray-600">
             <li>
-              <a href="tel:+902120000000" className="hover:text-primary transition">
-                +90 (212) 000 00 00
+              <a href="tel:+902125902325" className="hover:text-primary transition">
+                +90 (212) 590 23 25
+              </a>
+            </li>
+            <li>
+              <a href="tel:+905469402200" className="hover:text-primary transition">
+                +90 (546) 940 22 00
               </a>
             </li>
             <li>
@@ -31,7 +36,7 @@ export default function Footer() {
                 avcilar@avcilarsurucukursu.com
               </a>
             </li>
-            <li>Ambarlı Mah. Rıfat Ilgaz Sk. No:15/A Avcılar</li>
+            <li>Merkez Mah. Namık Kemal Cad. Umut İş Merkezi No:23 Kat:2 Avcılar</li>
           </ul>
         </div>
         
@@ -39,8 +44,8 @@ export default function Footer() {
           <h4 className="text-sm font-bold text-gray-900 mb-4">Büyükçekmece Şubesi</h4>
           <ul className="space-y-2 text-sm text-gray-600">
             <li>
-              <a href="tel:+902120000001" className="hover:text-primary transition">
-                +90 (212) 000 00 01
+              <a href="tel:+902128830883" className="hover:text-primary transition">
+                +90 (212) 883 08 83
               </a>
             </li>
             <li>
@@ -48,7 +53,7 @@ export default function Footer() {
                 buyukcekmece@avcilarsurucukursu.com
               </a>
             </li>
-            <li>Kumburgaz Mah. Sahil Yolu Cad. No:28</li>
+            <li>19 Mayıs Mah. D100 Karayolu Cad. No:1079 Daire:4 Büyükçekmece</li>
           </ul>
         </div>
         

@@ -14,20 +14,21 @@ export const SITE_CONFIG = {
   description: 'İstanbul Avcılar ve Büyükçekmece\'de MEB onaylı profesyonel sürücü kursu',
   logo: '/avcilarlogo.png',
   phone: {
-    avcilar: '+90 212 000 00 00',
-    buyukcekmece: '+90 212 000 00 01',
+    avcilar: '+90 (212) 590 23 25',
+    avcilarMobile: '+90 (546) 940 22 00',
+    buyukcekmece: '+90 (212) 883 08 83',
   },
   email: 'info@avcilarsurucukursu.com',
   address: {
     avcilar: {
-      street: 'Ambarlı Mahallesi, Rıfat Ilgaz Sokak No:15/A',
+      street: 'Merkez Mahallesi Namık Kemal Caddesi Umut İş Merkezi No:23 Kat:2',
       city: 'Avcılar',
       region: 'İstanbul',
       country: 'TR',
       postalCode: '34310',
     },
     buyukcekmece: {
-      street: 'Kumburgaz Mahallesi, Sahil Yolu Caddesi No:28',
+      street: '19 Mayıs Mahallesi D100 Karayolu Caddesi No:1079 Daire:4',
       city: 'Büyükçekmece',
       region: 'İstanbul',
       country: 'TR',

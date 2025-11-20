@@ -17,21 +17,22 @@ export const metadata: Metadata = getPageMetadata({
 const branches = [
   {
     name: "Avcılar Şubesi",
-    address: "Ambarlı Mahallesi, Rıfat Ilgaz Sokak No:15/A",
+    address: "Merkez Mahallesi Namık Kemal Caddesi Umut İş Merkezi No:23 Kat:2",
     city: "Avcılar / İstanbul",
-    phone: "+90 (212) 000 00 00",
+    phone: "+90 (212) 590 23 25",
+    phoneMobile: "+90 (546) 940 22 00",
     email: "avcilar@avcilarsurucukursu.com",
-    whatsapp: "https://wa.me/902120000000",
+    whatsapp: "https://wa.me/905469402200",
     hours: "Hafta içi: 09:00 - 21:00<br/>Cumartesi: 10:00 - 20:00<br/>Pazar: Kapalı",
     features: ["Modern sınıflar", "Otopark imkanı", "Metrobüs yakını"]
   },
   {
     name: "Büyükçekmece Şubesi",
-    address: "Kumburgaz Mahallesi, Sahil Yolu Caddesi No:28",
+    address: "19 Mayıs Mahallesi D100 Karayolu Caddesi No:1079 Daire:4",
     city: "Büyükçekmece / İstanbul",
-    phone: "+90 (212) 000 00 01",
+    phone: "+90 (212) 883 08 83",
     email: "buyukcekmece@avcilarsurucukursu.com",
-    whatsapp: "https://wa.me/902120000001",
+    whatsapp: "https://wa.me/902128830883",
     hours: "Hafta içi: 09:00 - 21:00<br/>Cumartesi: 10:00 - 20:00<br/>Pazar: Kapalı",
     features: ["Geniş parkur alanı", "Sahil kenarı", "Ücretsiz otopark"]
   }
@@ -178,9 +179,16 @@ export default function IletisimPage() {
 
                     <div className="flex items-center gap-3">
                       <span className="text-primary">📞</span>
-                      <a href={`tel:${branch.phone.replace(/\s/g, '')}`} className="text-gray-900 hover:text-primary transition">
-                        {branch.phone}
-                      </a>
+                      <div className="flex flex-col gap-1">
+                        <a href={`tel:${branch.phone.replace(/\s/g, '')}`} className="text-gray-900 hover:text-primary transition">
+                          {branch.phone}
+                        </a>
+                        {branch.phoneMobile && (
+                          <a href={`tel:${branch.phoneMobile.replace(/\s/g, '')}`} className="text-gray-900 hover:text-primary transition">
+                            {branch.phoneMobile}
+                          </a>
+                        )}
+                      </div>
                     </div>
 
                     <div className="flex items-center gap-3">

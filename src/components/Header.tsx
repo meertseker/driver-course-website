@@ -60,11 +60,11 @@ export default function Header() {
         {/* Desktop CTA */}
         <div className="hidden items-center gap-3 md:flex">
           <a
-            href="tel:+902120000000"
+            href="tel:+902125902325"
             onClick={() => trackPhoneCall('Avcılar')}
             className="rounded-full border border-gray-300 px-5 py-2 text-sm font-medium text-gray-700 transition hover:border-primary hover:text-primary"
           >
-            +90 (212) 000 00 00
+            +90 (212) 590 23 25
           </a>
           <Link
             href="#kayit"
@@ -120,11 +120,11 @@ export default function Header() {
               })}
               <div className="pt-3 border-t border-border flex flex-col gap-2">
                 <a
-                  href="tel:+902120000000"
+                  href="tel:+902125902325"
                   onClick={() => trackPhoneCall('Avcılar')}
                   className="block px-4 py-3 rounded-lg border border-primary text-primary font-semibold text-center hover:bg-primary hover:text-white transition"
                 >
-                  +90 (212) 000 00 00
+                  +90 (212) 590 23 25
                 </a>
                 <Link
                   href="#kayit"
