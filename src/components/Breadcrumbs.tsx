@@ -16,23 +16,23 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
         <li>
           <Link 
             href="/" 
-            className="text-gray-800 hover:text-primary hover:underline font-medium"
+            className="text-white hover:text-primary hover:underline font-medium"
           >
             Anasayfa
           </Link>
         </li>
         {items.map((item, index) => (
           <li key={index} className="flex items-center gap-2">
-            <span className="text-gray-800">/</span>
+            <span className="text-white">/</span>
             {item.href ? (
               <Link 
                 href={item.href} 
-                className="text-gray-800 hover:text-primary hover:underline font-medium"
+                className="text-white hover:text-primary hover:underline font-medium"
               >
                 {item.label}
               </Link>
             ) : (
-              <span className="text-gray-800 font-medium">{item.label}</span>
+              <span className="text-white font-medium">{item.label}</span>
             )}
           </li>
         ))}
