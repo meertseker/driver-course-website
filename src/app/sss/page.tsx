@@ -138,10 +138,10 @@ export default function SSSPage() {
                   İletişime Geç
                 </Link>
                 <a
-                  href="tel:+902120000000"
+                  href="tel:+902125902325"
                   className="inline-flex items-center justify-center rounded-full border-2 border-white text-white px-8 py-4 text-sm font-semibold hover:bg-white hover:text-primary transition-all"
                 >
-                  Hemen Ara: +90 (212) 000 00 00
+                  Hemen Ara: +90 (212) 590 23 25
                 </a>
               </div>
             </div>

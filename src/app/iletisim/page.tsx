@@ -87,12 +87,12 @@ export default function IletisimPage() {
                   </div>
                   <div>
                     <div className="font-semibold text-gray-900 mb-1">Telefon</div>
-                    <a href="tel:+902120000000" className="text-gray-600 hover:text-primary transition">
-                      Avcılar: +90 (212) 000 00 00
+                    <a href="tel:+902125902325" className="text-gray-600 hover:text-primary transition">
+                      Avcılar: +90 (212) 590 23 25
                     </a>
                     <br />
-                    <a href="tel:+902120000001" className="text-gray-600 hover:text-primary transition">
-                      Büyükçekmece: +90 (212) 000 00 01
+                    <a href="tel:+902128830883" className="text-gray-600 hover:text-primary transition">
+                      Büyükçekmece: +90 (212) 883 08 83
                     </a>
                   </div>
                 </div>
@@ -103,7 +103,7 @@ export default function IletisimPage() {
                   </div>
                   <div>
                     <div className="font-semibold text-gray-900 mb-1">WhatsApp</div>
-                    <a href="https://wa.me/902120000000" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-success transition">
+                    <a href="https://wa.me/905469402200" target="_blank" rel="noopener noreferrer" className="text-gray-600 hover:text-success transition">
                       7/24 anlık destek
                     </a>
                   </div>
