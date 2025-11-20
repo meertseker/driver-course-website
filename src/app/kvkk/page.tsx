@@ -113,10 +113,10 @@ export default function KVKKPage() {
                 <strong>E-posta:</strong> info@avcilarsurucukursu.com
               </p>
               <p className="text-gray-700 mb-2">
-                <strong>Posta Adresi:</strong> Ambarlı Mahallesi, Rıfat Ilgaz Sokak No:15/A, Avcılar/İstanbul
+                <strong>Posta Adresi:</strong> Merkez Mahallesi Namık Kemal Caddesi Umut İş Merkezi No:23 Kat:2, Avcılar/İstanbul
               </p>
               <p className="text-gray-700">
-                <strong>Telefon:</strong> +90 (212) 000 00 00
+                <strong>Telefon:</strong> +90 (212) 590 23 25 - +90 (546) 940 22 00 (Avcılar) | +90 (212) 883 08 83 (Büyükçekmece)
               </p>
             </div>
           </section>

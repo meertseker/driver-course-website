@@ -36,7 +36,7 @@ export default function Footer() {
                 avcilar@avcilarsurucukursu.com
               </a>
             </li>
-            <li>Merkez Mah. Namık Kemal Cad. Umut İş Merkezi No:23 Kat:2 Avcılar</li>
+            <li>Merkez Mahallesi Namık Kemal Caddesi Umut İş Merkezi No:23 Kat:2, Avcılar/İstanbul</li>
           </ul>
         </div>
         
@@ -53,7 +53,7 @@ export default function Footer() {
                 buyukcekmece@avcilarsurucukursu.com
               </a>
             </li>
-            <li>19 Mayıs Mah. D100 Karayolu Cad. No:1079 Daire:4 Büyükçekmece</li>
+            <li>19 Mayıs Mahallesi D100 Karayolu Caddesi No:1079 Daire:4, Büyükçekmece/İstanbul</li>
           </ul>
         </div>
         

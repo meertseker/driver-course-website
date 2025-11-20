@@ -36,7 +36,7 @@ const quickActions = [
   {
     title: "WhatsApp ile Hızlı Destek",
     description: "Evrak ve kayıt süreçleri için anlık yanıt alın.",
-    href: "https://wa.me/900000000000",
+    href: "https://wa.me/905469402200",
     action: "Mesaj Gönder",
   },
   {

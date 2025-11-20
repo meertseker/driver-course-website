@@ -231,13 +231,16 @@ export default function GizlilikPage() {
                 <strong>E-posta:</strong> info@avcilarsurucukursu.com
               </p>
               <p className="text-gray-700 mb-2">
-                <strong>Telefon:</strong> +90 (212) 000 00 00 (Avcılar Şubesi)
+                <strong>Telefon:</strong> +90 (212) 590 23 25 - +90 (546) 940 22 00 (Avcılar Şubesi)
               </p>
               <p className="text-gray-700 mb-2">
-                <strong>Telefon:</strong> +90 (212) 000 00 01 (Büyükçekmece Şubesi)
+                <strong>Telefon:</strong> +90 (212) 883 08 83 (Büyükçekmece Şubesi)
+              </p>
+              <p className="text-gray-700 mb-2">
+                <strong>Adres (Avcılar):</strong> Merkez Mahallesi Namık Kemal Caddesi Umut İş Merkezi No:23 Kat:2, Avcılar/İstanbul
               </p>
               <p className="text-gray-700">
-                <strong>Adres:</strong> Ambarlı Mahallesi, Rıfat Ilgaz Sokak No:15/A, Avcılar/İstanbul
+                <strong>Adres (Büyükçekmece):</strong> 19 Mayıs Mahallesi D100 Karayolu Caddesi No:1079 Daire:4, Büyükçekmece/İstanbul
               </p>
             </div>
           </section>

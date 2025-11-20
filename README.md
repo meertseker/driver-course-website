@@ -241,8 +241,8 @@ Pull request'ler memnuniyetle karşılanır!
 ## 📞 İletişim
 
 - 📧 Email: info@avcilarsurucukursu.com
-- 📱 Telefon (Avcılar): +90 212 000 00 00
-- 📱 Telefon (Büyükçekmece): +90 212 000 00 01
+- 📱 Telefon (Avcılar): +90 (212) 590 23 25 - +90 (546) 940 22 00
+- 📱 Telefon (Büyükçekmece): +90 (212) 883 08 83
 
 ---
 

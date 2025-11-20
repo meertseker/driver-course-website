@@ -181,7 +181,7 @@ export default function RootLayout({
             contactPoint: [
               {
                 "@type": "ContactPoint",
-                telephone: "+90-212-000-00-00",
+                telephone: "+90-212-590-23-25",
                 contactType: "customer service",
                 areaServed: "TR",
                 availableLanguage: "Turkish"
@@ -191,10 +191,10 @@ export default function RootLayout({
               {
                 "@type": "DrivingSchool",
                 name: "Avcılar Sürücü Kursu - Avcılar Şubesi",
-                telephone: "+90 212 000 00 00",
+                telephone: "+90 212 590 23 25",
                 address: {
                   "@type": "PostalAddress",
-                  streetAddress: "Ambarlı Mahallesi, Rıfat Ilgaz Sokak No:15/A",
+                  streetAddress: "Merkez Mahallesi Namık Kemal Caddesi Umut İş Merkezi No:23 Kat:2",
                   addressLocality: "Avcılar",
                   addressRegion: "İstanbul",
                   addressCountry: "TR",
@@ -207,10 +207,10 @@ export default function RootLayout({
               {
                 "@type": "DrivingSchool",
                 name: "Avcılar Sürücü Kursu - Büyükçekmece Şubesi",
-                telephone: "+90 212 000 00 01",
+                telephone: "+90 212 883 08 83",
                 address: {
                   "@type": "PostalAddress",
-                  streetAddress: "Kumburgaz Mahallesi, Sahil Yolu Caddesi No:28",
+                  streetAddress: "19 Mayıs Mahallesi D100 Karayolu Caddesi No:1079 Daire:4",
                   addressLocality: "Büyükçekmece",
                   addressRegion: "İstanbul",
                   addressCountry: "TR",
