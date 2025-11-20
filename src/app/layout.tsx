@@ -110,7 +110,10 @@ export const metadata: Metadata = {
     images: ["/avcilarlogo.png"],
   },
   icons: {
-    icon: "/avcilarlogo.png",
+    icon: [
+      { url: "/avcilarlogo.png", sizes: "any", type: "image/png" },
+      { url: "/icon.png", sizes: "any", type: "image/png" },
+    ],
     shortcut: "/avcilarlogo.png",
     apple: "/avcilarlogo.png",
   },
