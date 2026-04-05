@@ -108,7 +108,7 @@ export default function RootLayout({
         <link rel="icon" href="/avcilarlogo.png" type="image/png" />
         <link rel="shortcut icon" href="/avcilarlogo.png" type="image/png" />
         <link rel="apple-touch-icon" href="/avcilarlogo.png" />
-        <meta name="theme-color" content="#1d68a9" />
+        <meta name="theme-color" content="#1565C0" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
         <meta name="apple-mobile-web-app-title" content="Avcılar Sürücü Kursu" />

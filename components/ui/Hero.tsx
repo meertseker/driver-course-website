@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { motion, useMotionValue } from 'framer-motion';
+import { motion } from 'framer-motion';
 import { springs, floatingAnimation } from '@/lib/spring-animations';
 import { useEffect, useState } from 'react';
 
@@ -17,19 +17,25 @@ export default function Hero({ title, subtitle, primaryCta, secondaryCta, stats 
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
+    let rafId: number;
     const handleMouseMove = (e: MouseEvent) => {
-      // Calculate parallax based on window dimensions
-      const x = (e.clientX / window.innerWidth - 0.5) * 40;
-      const y = (e.clientY / window.innerHeight - 0.5) * 40;
-      setMousePos({ x, y });
+      cancelAnimationFrame(rafId);
+      rafId = requestAnimationFrame(() => {
+        const x = (e.clientX / window.innerWidth - 0.5) * 20;
+        const y = (e.clientY / window.innerHeight - 0.5) * 20;
+        setMousePos({ x, y });
+      });
     };
 
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
+    window.addEventListener('mousemove', handleMouseMove, { passive: true });
+    return () => {
+      window.removeEventListener('mousemove', handleMouseMove);
+      cancelAnimationFrame(rafId);
+    };
   }, []);
 
   return (
-    <div className="relative overflow-hidden bg-gradient-to-br from-[#071629] via-[#0C2248] to-[#071629]">
+    <div className="relative overflow-hidden bg-linear-to-br from-[#071629] via-[#0C2248] to-[#071629]">
       {/* Mesh Gradient Background - Red Centered */}
       <motion.div 
         className="absolute inset-0"
@@ -110,21 +116,21 @@ export default function Hero({ title, subtitle, primaryCta, secondaryCta, stats 
       {/* Floating Glass Orbs */}
       <div className="absolute inset-0 pointer-events-none">
         <motion.div
-          className="absolute top-20 left-[10%] w-64 h-64 rounded-full backdrop-blur-3xl bg-primary-red/20 shadow-glow-red"
+          className="absolute top-20 left-[10%] w-64 h-64 rounded-full bg-primary-red/20 shadow-glow-red blur-3xl"
           animate={floatingAnimation}
-          transition={{ duration: 8, delay: 0 }}
+          transition={{ duration: 8, delay: 0, repeat: Infinity, ease: 'easeInOut' }}
         />
         
         <motion.div
-          className="absolute top-40 right-[15%] w-96 h-96 rounded-full backdrop-blur-3xl bg-secondary-orange/20 shadow-glow-orange"
+          className="absolute top-40 right-[15%] w-96 h-96 rounded-full bg-secondary-orange/20 shadow-glow-orange blur-3xl"
           animate={floatingAnimation}
-          transition={{ duration: 10, delay: 1 }}
+          transition={{ duration: 10, delay: 1, repeat: Infinity, ease: 'easeInOut' }}
         />
         
         <motion.div
-          className="absolute bottom-32 left-[20%] w-80 h-80 rounded-full backdrop-blur-3xl bg-accent-rose/15 shadow-glass"
+          className="absolute bottom-32 left-[20%] w-80 h-80 rounded-full bg-accent-rose/15 shadow-glass blur-3xl"
           animate={floatingAnimation}
-          transition={{ duration: 12, delay: 2 }}
+          transition={{ duration: 12, delay: 2, repeat: Infinity, ease: 'easeInOut' }}
         />
       </div>
 
@@ -163,7 +169,7 @@ export default function Hero({ title, subtitle, primaryCta, secondaryCta, stats 
             >
               <Link href={primaryCta.href}>
                 <motion.div
-                  className="relative px-8 py-4 bg-gradient-to-r from-primary-red to-primary-red-dark text-white rounded-2xl font-semibold text-lg shadow-glow-red overflow-hidden"
+                  className="relative px-8 py-4 bg-linear-to-r from-primary-red to-primary-red-dark text-white rounded-2xl font-semibold text-lg shadow-glow-red overflow-hidden"
                   whileHover={{ 
                     scale: 1.05, 
                     y: -4,
@@ -173,11 +179,11 @@ export default function Hero({ title, subtitle, primaryCta, secondaryCta, stats 
                   transition={springs.smooth}
                 >
                   {/* Glass overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent" />
+                  <div className="absolute inset-0 bg-linear-to-br from-white/20 via-transparent to-transparent" />
                   
                   {/* Shimmer effect */}
                   <motion.div
-                    className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"
+                    className="absolute inset-0 bg-linear-to-r from-transparent via-white/30 to-transparent"
                     animate={{ x: ['-200%', '200%'] }}
                     transition={{ duration: 2, repeat: Infinity, ease: 'linear' }}
                   />
@@ -190,7 +196,7 @@ export default function Hero({ title, subtitle, primaryCta, secondaryCta, stats 
               
               <a href={secondaryCta.href} target="_blank" rel="noopener noreferrer">
                 <motion.div
-                  className="group relative px-8 py-4 backdrop-blur-2xl bg-gradient-to-r from-green-500/90 to-green-600/90 border-2 border-green-400/50 text-white rounded-2xl font-semibold text-lg shadow-glass-xl overflow-hidden hover:from-green-600/90 hover:to-green-700/90"
+                  className="group relative px-8 py-4 backdrop-blur-2xl bg-linear-to-r from-green-500/90 to-green-600/90 border-2 border-green-400/50 text-white rounded-2xl font-semibold text-lg shadow-glass-xl overflow-hidden hover:from-green-600/90 hover:to-green-700/90"
                   whileHover={{ 
                     scale: 1.05, 
                     y: -4,
@@ -200,7 +206,7 @@ export default function Hero({ title, subtitle, primaryCta, secondaryCta, stats 
                   transition={springs.smooth}
                 >
                   {/* Glass reflection */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-white/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+                  <div className="absolute inset-0 bg-linear-to-br from-white/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                   
                   <span className="relative z-10 flex items-center gap-2">
                     <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
@@ -230,10 +236,10 @@ export default function Hero({ title, subtitle, primaryCta, secondaryCta, stats 
                     whileHover={{ scale: 1.05, y: -4, borderColor: 'rgba(154, 50, 34, 0.8)' }}
                   >
                     {/* Glass reflection */}
-                    <div className="absolute inset-0 bg-gradient-to-br from-primary-red/20 via-transparent to-transparent" />
+                    <div className="absolute inset-0 bg-linear-to-br from-primary-red/20 via-transparent to-transparent" />
                     
                     <div className="relative z-10">
-                      <div className="text-3xl md:text-4xl font-bold mb-1 bg-gradient-to-r from-white via-secondary-gold to-white bg-clip-text text-transparent">
+                      <div className="text-3xl md:text-4xl font-bold mb-1 bg-linear-to-r from-white via-secondary-gold to-white bg-clip-text text-transparent">
                         {stat.value}
                       </div>
                       <div className="text-xs md:text-sm text-white font-medium">
@@ -254,7 +260,7 @@ export default function Hero({ title, subtitle, primaryCta, secondaryCta, stats 
                 className="relative w-full h-96 rounded-3xl overflow-hidden backdrop-blur-2xl bg-white/5 shadow-glow-red border-2 border-primary-red/40"
               >
                 {/* Glass reflection overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-white/20 via-transparent to-transparent pointer-events-none z-10" />
+                <div className="absolute inset-0 bg-linear-to-br from-white/20 via-transparent to-transparent pointer-events-none z-10" />
                 
                 {/* Hero Image */}
                 <div className="absolute inset-0">
@@ -266,27 +272,27 @@ export default function Hero({ title, subtitle, primaryCta, secondaryCta, stats 
                   />
                   
                   {/* Dark overlay for better contrast */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent z-10" />
+                  <div className="absolute inset-0 bg-linear-to-t from-black/60 via-black/20 to-transparent z-10" />
                 </div>
               </div>
               
               {/* Floating glass badges */}
               <div className="absolute top-10 -right-4 backdrop-blur-2xl bg-white/10 p-4 rounded-2xl shadow-glow-red border-2 border-primary-red/50 overflow-hidden">
                 {/* Glass reflection */}
-                <div className="absolute inset-0 bg-gradient-to-br from-primary-red/30 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-br from-primary-red/30 via-transparent to-transparent" />
                 
                 <div className="relative z-10">
-                  <div className="text-2xl font-bold bg-gradient-to-r from-white to-secondary-gold bg-clip-text text-transparent">2003</div>
+                  <div className="text-2xl font-bold bg-linear-to-r from-white to-secondary-gold bg-clip-text text-transparent">2003</div>
                   <div className="text-xs text-white font-medium">Büyükçekmece&apos;de faaliyet</div>
                 </div>
               </div>
               
               <div className="absolute bottom-10 -left-4 backdrop-blur-2xl bg-white/10 p-4 rounded-2xl shadow-glow-orange border-2 border-secondary-orange/50 overflow-hidden">
                 {/* Glass reflection */}
-                <div className="absolute inset-0 bg-gradient-to-br from-secondary-orange/30 via-transparent to-transparent" />
+                <div className="absolute inset-0 bg-linear-to-br from-secondary-orange/30 via-transparent to-transparent" />
                 
                 <div className="relative z-10">
-                  <div className="text-2xl font-bold bg-gradient-to-r from-white to-secondary-gold bg-clip-text text-transparent">B / A1 / A2</div>
+                  <div className="text-2xl font-bold bg-linear-to-r from-white to-secondary-gold bg-clip-text text-transparent">B / A1 / A2</div>
                   <div className="text-xs text-white font-medium">Ehliyet ve direksiyon dersi</div>
                 </div>
               </div>
