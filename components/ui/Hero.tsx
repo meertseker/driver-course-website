@@ -2,8 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { springs, floatingAnimation } from '@/lib/spring-animations';
-import { useEffect, useState } from 'react';
+import { springs } from '@/lib/spring-animations';
 
 interface HeroProps {
   title: string;
@@ -14,92 +13,14 @@ interface HeroProps {
 }
 
 export default function Hero({ title, subtitle, primaryCta, secondaryCta, stats }: HeroProps) {
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
-
-  useEffect(() => {
-    let rafId: number;
-    const handleMouseMove = (e: MouseEvent) => {
-      cancelAnimationFrame(rafId);
-      rafId = requestAnimationFrame(() => {
-        const x = (e.clientX / window.innerWidth - 0.5) * 20;
-        const y = (e.clientY / window.innerHeight - 0.5) * 20;
-        setMousePos({ x, y });
-      });
-    };
-
-    window.addEventListener('mousemove', handleMouseMove, { passive: true });
-    return () => {
-      window.removeEventListener('mousemove', handleMouseMove);
-      cancelAnimationFrame(rafId);
-    };
-  }, []);
-
   return (
     <div className="relative overflow-hidden bg-linear-to-br from-[#071629] via-[#0C2248] to-[#071629]">
-      {/* Mesh Gradient Background - Red Centered */}
-      <motion.div 
-        className="absolute inset-0"
-        animate={{ x: mousePos.x, y: mousePos.y }}
-        transition={{ type: 'spring', stiffness: 50, damping: 20 }}
-      >
-        {/* Multi-layer gradient mesh */}
-        <motion.div
-          className="absolute inset-0 bg-gradient-radial from-primary-red/30 via-transparent to-transparent"
-          animate={{
-            scale: [1, 1.2, 1],
-            x: ['0%', '20%', '0%'],
-            y: ['0%', '30%', '0%'],
-          }}
-          transition={{
-            duration: 20,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          }}
-        />
-        
-        <motion.div
-          className="absolute inset-0 bg-gradient-radial from-secondary-orange/25 via-transparent to-transparent"
-          style={{ left: '50%', top: '20%' }}
-          animate={{
-            scale: [1.2, 1, 1.2],
-            x: ['-10%', '10%', '-10%'],
-            y: ['10%', '-10%', '10%'],
-          }}
-          transition={{
-            duration: 25,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          }}
-        />
-        
-        <motion.div
-          className="absolute inset-0 bg-gradient-radial from-accent-rose/20 via-transparent to-transparent"
-          style={{ right: '10%', bottom: '20%' }}
-          animate={{
-            scale: [1, 1.3, 1],
-            x: ['10%', '-10%', '10%'],
-          }}
-          transition={{
-            duration: 30,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          }}
-        />
-        
-        <motion.div
-          className="absolute inset-0 bg-gradient-radial from-secondary-gold/15 via-transparent to-transparent"
-          style={{ left: '70%', top: '60%' }}
-          animate={{
-            scale: [1.1, 1, 1.1],
-            y: ['0%', '20%', '0%'],
-          }}
-          transition={{
-            duration: 22,
-            repeat: Infinity,
-            ease: 'easeInOut',
-          }}
-        />
-      </motion.div>
+      {/* Static gradient mesh — no infinite animation to spare GPU */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute inset-0 bg-gradient-radial from-primary-red/25 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-radial from-secondary-orange/15 via-transparent to-transparent" style={{ left: '50%', top: '20%' }} />
+        <div className="absolute inset-0 bg-gradient-radial from-accent-rose/10 via-transparent to-transparent" style={{ right: '10%', bottom: '20%' }} />
+      </div>
 
       {/* Glass Grid Pattern */}
       <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.05]">
@@ -112,26 +33,12 @@ export default function Hero({ title, subtitle, primaryCta, secondaryCta, stats 
           <rect width="100%" height="100%" fill="url(#glass-grid)" />
         </svg>
       </div>
-      
-      {/* Floating Glass Orbs */}
-      <div className="absolute inset-0 pointer-events-none">
-        <motion.div
-          className="absolute top-20 left-[10%] w-64 h-64 rounded-full bg-primary-red/20 shadow-glow-red blur-3xl"
-          animate={floatingAnimation}
-          transition={{ duration: 8, delay: 0, repeat: Infinity, ease: 'easeInOut' }}
-        />
-        
-        <motion.div
-          className="absolute top-40 right-[15%] w-96 h-96 rounded-full bg-secondary-orange/20 shadow-glow-orange blur-3xl"
-          animate={floatingAnimation}
-          transition={{ duration: 10, delay: 1, repeat: Infinity, ease: 'easeInOut' }}
-        />
-        
-        <motion.div
-          className="absolute bottom-32 left-[20%] w-80 h-80 rounded-full bg-accent-rose/15 shadow-glass blur-3xl"
-          animate={floatingAnimation}
-          transition={{ duration: 12, delay: 2, repeat: Infinity, ease: 'easeInOut' }}
-        />
+
+      {/* Static soft orbs — CSS animation only, no JS loop */}
+      <div className="absolute inset-0 pointer-events-none" aria-hidden="true">
+        <div className="absolute top-20 left-[10%] w-56 h-56 rounded-full bg-primary-red/15 blur-2xl animate-pulse-slow" />
+        <div className="absolute top-40 right-[15%] w-72 h-72 rounded-full bg-secondary-orange/12 blur-2xl animate-pulse-slow [animation-delay:2s]" />
+        <div className="absolute bottom-32 left-[20%] w-64 h-64 rounded-full bg-accent-rose/10 blur-2xl animate-pulse-slow [animation-delay:4s]" />
       </div>
 
       <div className="relative container mx-auto px-4 py-20 md:py-32">
@@ -169,7 +76,7 @@ export default function Hero({ title, subtitle, primaryCta, secondaryCta, stats 
             >
               <Link href={primaryCta.href}>
                 <motion.div
-                  className="relative px-8 py-4 bg-linear-to-r from-primary-red to-primary-red-dark text-white rounded-2xl font-semibold text-lg shadow-glow-red overflow-hidden"
+                  className="group relative px-8 py-4 bg-linear-to-r from-primary-red to-primary-red-dark text-white rounded-2xl font-semibold text-lg shadow-glow-red overflow-hidden"
                   whileHover={{ 
                     scale: 1.05, 
                     y: -4,
@@ -181,12 +88,8 @@ export default function Hero({ title, subtitle, primaryCta, secondaryCta, stats 
                   {/* Glass overlay */}
                   <div className="absolute inset-0 bg-linear-to-br from-white/20 via-transparent to-transparent" />
                   
-                  {/* Shimmer effect */}
-                  <motion.div
-                    className="absolute inset-0 bg-linear-to-r from-transparent via-white/30 to-transparent"
-                    animate={{ x: ['-200%', '200%'] }}
-                    transition={{ duration: 2, repeat: Infinity, ease: 'linear' }}
-                  />
+                  {/* Shimmer — CSS only, no JS loop */}
+                  <div className="absolute inset-0 bg-linear-to-r from-transparent via-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                   
                   <span className="relative z-10 flex items-center gap-2">
                     <span>🚗</span> {primaryCta.text}
