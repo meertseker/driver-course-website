@@ -342,20 +342,8 @@ export default function Home() {
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
               </svg>
               <div className="text-left">
-                <div className="text-xs font-normal text-primary-red/70">Avcılar Şubesi</div>
+                <div className="text-xs font-normal text-primary-red/70">Bizi Arayın</div>
                 <div className="font-bold">+90 (212) 590 23 25</div>
-              </div>
-            </a>
-            <a
-              href="tel:+902128830883"
-              className="flex items-center gap-3 px-8 py-4 backdrop-blur-xl bg-white/95 text-primary-red rounded-2xl font-semibold text-lg shadow-[0_10px_40px_rgba(255,255,255,0.3)] hover:shadow-[0_15px_50px_rgba(255,255,255,0.4)] hover:scale-105 transition-all duration-300 border border-white/50"
-            >
-              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-              </svg>
-              <div className="text-left">
-                <div className="text-xs font-normal text-primary-red/70">Büyükçekmece Şubesi</div>
-                <div className="font-bold">+90 (212) 883 08 83</div>
               </div>
             </a>
             <a
@@ -380,18 +368,6 @@ export default function Home() {
           >
             Bilgi Formu Doldur
           </a>
-          
-          {/* Branch info */}
-          <div className="mt-10 grid md:grid-cols-2 gap-6 max-w-2xl mx-auto">
-            <div className="backdrop-blur-xl bg-white/10 rounded-2xl p-5 border border-white/20 text-left">
-              <p className="font-bold text-white mb-1">Avcılar Şubesi</p>
-              <p className="text-white/80 text-sm">Merkez Mah. Namık Kemal Cad. Umut İş Merkezi No:23 Kat:2</p>
-            </div>
-            <div className="backdrop-blur-xl bg-white/10 rounded-2xl p-5 border border-white/20 text-left">
-              <p className="font-bold text-white mb-1">Büyükçekmece Şubesi</p>
-              <p className="text-white/80 text-sm">19 Mayıs Mah. D100 Karayolu Cad. No:1079 Daire:4</p>
-            </div>
-          </div>
         </div>
       </section>
 
