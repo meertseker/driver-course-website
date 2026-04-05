@@ -217,3 +217,36 @@ select:focus-visible {
     scroll-behavior: smooth;
   }
 }
+
+/*
+ * Chrome GPU Crash Fix
+ * backdrop-filter: blur() + ANY animation on the same page forces Chrome to
+ * recalculate every blur layer on every single frame → GPU process OOM crash.
+ * Fix: promote each backdrop-blur element to its own GPU compositing layer via
+ * translateZ(0) and give it an isolated stacking context so Chrome stops
+ * propagating "dirty frame" signals across blur boundaries.
+ */
+.backdrop-blur-sm,
+.backdrop-blur,
+.backdrop-blur-md,
+.backdrop-blur-lg,
+.backdrop-blur-xl,
+.backdrop-blur-2xl,
+.backdrop-blur-3xl {
+  -webkit-transform: translateZ(0);
+  transform: translateZ(0);
+  isolation: isolate;
+  contain: layout;
+  /* Reduce blur radius to lower per-frame GPU cost */
+  --tw-backdrop-blur: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  backdrop-filter: blur(8px) !important;
+}
+
+/* Navigation gets a bit more blur since it's the only fixed element */
+nav .backdrop-blur-xl,
+nav.backdrop-blur-xl {
+  --tw-backdrop-blur: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  backdrop-filter: blur(12px) !important;
+}
