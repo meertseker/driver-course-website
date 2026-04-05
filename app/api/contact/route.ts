@@ -62,25 +62,21 @@ export async function POST(request: NextRequest) {
 
     // Check if RESEND_API_KEY is configured
     if (!process.env.RESEND_API_KEY) {
-      console.warn('RESEND_API_KEY not configured. Email will not be sent.');
-      // In development, just return success
-      if (process.env.NODE_ENV === 'development') {
-        console.log('Contact form submission (dev mode):', { name, email, phone, message, courseInterest });
-        await saveToFirestore({ name, email, phone, message, courseInterest });
-        return NextResponse.json(
-          { success: true, message: 'Mesajınız alındı (dev mode)' },
-          { status: 200 }
-        );
-      }
+      console.warn('RESEND_API_KEY not configured. Email will not be sent, saving to Firestore only.');
+      await saveToFirestore({ name, email, phone, message, courseInterest });
       return NextResponse.json(
-        { error: 'Email servis konfigüre edilmemiş' },
-        { status: 500 }
+        { success: true, message: 'Mesajınız alındı' },
+        { status: 200 }
       );
     }
 
-    // Send email using Resend
+    // Always save to Firestore first so no submission is lost
+    await saveToFirestore({ name, email, phone, message, courseInterest });
+
+    // Send email using Resend (non-blocking — failure does not affect the user response)
+    const fromAddress = process.env.RESEND_FROM_EMAIL || 'onboarding@resend.dev';
     const { error } = await resend.emails.send({
-      from: 'Avcılar Sürücü Kursu <onboarding@resend.dev>', // In production, use your verified domain
+      from: `Avcılar Sürücü Kursu <${fromAddress}>`,
       to: process.env.CONTACT_EMAIL || 'info@avcilarehliyetkursu.com',
       replyTo: email,
       subject: `Yeni İletişim Formu - ${name}`,
@@ -96,15 +92,8 @@ export async function POST(request: NextRequest) {
     });
 
     if (error) {
-      console.error('Resend error:', error);
-      return NextResponse.json(
-        { error: 'E-posta gönderilirken bir hata oluştu' },
-        { status: 500 }
-      );
+      console.error('Resend error (message still saved to Firestore):', error);
     }
-
-    // Save to Firestore server-side (works regardless of user's country/VPN)
-    await saveToFirestore({ name, email, phone, message, courseInterest });
 
     return NextResponse.json(
       { success: true, message: 'Mesajınız başarıyla gönderildi' },
