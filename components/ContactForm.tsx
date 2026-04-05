@@ -11,7 +11,6 @@ import {
   trackContactFormError,
   trackCourseInterest,
 } from '@/lib/analytics';
-import { createFeedbackEntry } from '@/lib/feedback';
 
 const contactSchema = z.object({
   name: z.string().min(2, 'Ad soyad en az 2 karakter olmalıdır'),
@@ -59,16 +58,6 @@ export default function ContactForm() {
       const result = await response.json();
 
       if (response.ok) {
-        await createFeedbackEntry({
-          type: 'iletisim',
-          name: data.name,
-          email: data.email,
-          phone: data.phone,
-          courseInterest: data.courseInterest,
-          message: data.message,
-        });
-
-        // Track successful submission
         trackContactFormComplete();
         if (data.courseInterest) {
           trackCourseInterest(data.courseInterest);
@@ -78,7 +67,6 @@ export default function ContactForm() {
         reset();
         setFormStarted(false);
       } else {
-        // Track error
         trackContactFormError(result.error || 'Submission failed');
         toast.error(result.error || 'Bir hata oluştu, lütfen tekrar deneyiniz.');
       }

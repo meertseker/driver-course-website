@@ -4,6 +4,8 @@ import FeedbackForm from '@/components/FeedbackForm';
 import Navigation from '@/components/ui/Navigation';
 import Footer from '@/components/ui/Footer';
 
+export const dynamic = 'force-dynamic';
+
 export const metadata: Metadata = {
   title: 'Şikayet ve Geri Bildirim - Avcılar Sürücü Kursu',
   description: 'Avcılar Sürücü Kursu hizmetleriyle ilgili görüş, öneri ve çözüm beklentinizi bizimle paylaşın.',

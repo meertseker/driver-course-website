@@ -1,5 +1,5 @@
 import { initializeApp, getApps } from 'firebase/app';
-import { getFirestore, connectFirestoreEmulator } from 'firebase/firestore';
+import { getFirestore } from 'firebase/firestore';
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -10,23 +10,17 @@ const firebaseConfig = {
   appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
 };
 
-// Config validasyonu
-console.log('🔥 Firebase Config Kontrolü:');
-console.log('  ✓ API Key:', firebaseConfig.apiKey ? '✅ Var' : '❌ YOK!');
-console.log('  ✓ Auth Domain:', firebaseConfig.authDomain ? '✅ Var' : '❌ YOK!');
-console.log('  ✓ Project ID:', firebaseConfig.projectId ? '✅ Var' : '❌ YOK!');
-console.log('  ✓ Storage Bucket:', firebaseConfig.storageBucket ? '✅ Var' : '❌ YOK!');
-console.log('  ✓ Messaging Sender ID:', firebaseConfig.messagingSenderId ? '✅ Var' : '❌ YOK!');
-console.log('  ✓ App ID:', firebaseConfig.appId ? '✅ Var' : '❌ YOK!');
+let db: ReturnType<typeof getFirestore>;
 
-if (!firebaseConfig.projectId) {
-  throw new Error('❌ FIREBASE PROJECT ID BULUNAMADI!\n.env.local dosyasını kontrol edin.');
+function getDb() {
+  if (!db) {
+    if (!firebaseConfig.projectId) {
+      throw new Error('Firebase Project ID bulunamadı. .env.local dosyasını kontrol edin.');
+    }
+    const app = !getApps().length ? initializeApp(firebaseConfig) : getApps()[0];
+    db = getFirestore(app);
+  }
+  return db;
 }
 
-const app = !getApps().length ? initializeApp(firebaseConfig) : getApps()[0];
-const db = getFirestore(app);
-
-console.log('🔥 Firebase App başlatıldı:', app.name);
-console.log('🔥 Firestore instance oluşturuldu');
-
-export { db };
+export { getDb as db };

@@ -61,12 +61,6 @@ function normalizeFeedbackError(error: unknown): FeedbackError {
 
 export async function createFeedbackEntry(input: CreateFeedbackInput): Promise<string> {
   try {
-    console.log('🔥 Firestore yazma başlıyor...', input);
-    console.log('🔥 DB instance:', db);
-    console.log('🔥 DB app name:', db.app.name);
-    console.log('🔥 DB app options:', db.app.options);
-    console.log('🔥 Collection name:', COLLECTION_NAME);
-    
     const dataToWrite = {
       type: input.type,
       message: input.message,
@@ -78,47 +72,16 @@ export async function createFeedbackEntry(input: CreateFeedbackInput): Promise<s
       createdAt: serverTimestamp(),
     };
     
-    console.log('🔥 Yazılacak veri:', dataToWrite);
-    console.log('🔥 addDoc fonksiyonu çağrılıyor...');
-    
-    // Timeout'u 30 saniyeye çıkarıyoruz ve daha detaylı log
     const timeoutPromise = new Promise<never>((_, reject) => {
-      setTimeout(() => {
-        console.error('⏰ 30 saniye timeout! Firebase yanıt vermiyor.');
-        reject(new Error('TIMEOUT_ERROR'));
-      }, 30000);
+      setTimeout(() => reject(new Error('TIMEOUT_ERROR')), 30000);
     });
     
-    const addDocPromise = addDoc(collection(db, COLLECTION_NAME), dataToWrite)
-      .then((docRef) => {
-        console.log('✅ addDoc başarılı!', docRef.id);
-        return docRef;
-      })
-      .catch((error) => {
-        console.error('❌ addDoc hatası yakalandı:', error);
-        console.error('❌ Hata tipi:', typeof error);
-        console.error('❌ Hata constructor:', error.constructor.name);
-        console.error('❌ Hata code:', error.code);
-        console.error('❌ Hata name:', error.name);
-        console.error('❌ Hata message:', error.message);
-        console.error('❌ Tam hata objesi:', JSON.stringify(error, Object.getOwnPropertyNames(error)));
-        throw error;
-      });
-    
+    const addDocPromise = addDoc(collection(db(), COLLECTION_NAME), dataToWrite);
     const docRef = await Promise.race([addDocPromise, timeoutPromise]);
     
-    console.log('✅ Firestore yazma başarılı! Doc ID:', docRef.id);
     return docRef.id;
   } catch (error: unknown) {
     const feedbackError = normalizeFeedbackError(error);
-
-    console.error('❌ CATCH bloğunda yakalanan hata:', error);
-    console.error('❌ Hata tipi:', typeof error);
-    console.error('❌ Hata constructor:', feedbackError.constructor?.name);
-    console.error('❌ Hata code:', feedbackError.code);
-    console.error('❌ Hata name:', feedbackError.name);
-    console.error('❌ Hata message:', feedbackError.message);
-    console.error('❌ Tam hata:', JSON.stringify(error, Object.getOwnPropertyNames(error), 2));
     
     // Timeout hatası mı?
     if (feedbackError.message === 'TIMEOUT_ERROR') {
@@ -177,7 +140,7 @@ export async function listFeedbackEntries(): Promise<FeedbackEntry[]> {
     });
     
     const q = query(
-      collection(db, COLLECTION_NAME), 
+      collection(db(), COLLECTION_NAME), 
       orderBy('createdAt', 'desc')
     );
     
@@ -231,7 +194,7 @@ export async function listFeedbackEntries(): Promise<FeedbackEntry[]> {
 
 export async function deleteFeedbackEntry(id: string): Promise<void> {
   try {
-    await deleteDoc(doc(db, COLLECTION_NAME, id));
+    await deleteDoc(doc(db(), COLLECTION_NAME, id));
   } catch (error) {
     console.error('Error deleting feedback entry:', error);
     throw new Error('Geri bildirim silinemedi.');
@@ -240,7 +203,7 @@ export async function deleteFeedbackEntry(id: string): Promise<void> {
 
 export async function updateFeedbackStatus(id: string, status: FeedbackStatus): Promise<void> {
   try {
-    await updateDoc(doc(db, COLLECTION_NAME, id), {
+    await updateDoc(doc(db(), COLLECTION_NAME, id), {
       status,
     });
   } catch (error) {

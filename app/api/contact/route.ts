@@ -1,6 +1,40 @@
 ﻿import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
 
+async function saveToFirestore(data: {
+  name: string;
+  email: string;
+  phone: string;
+  message: string;
+  courseInterest?: string;
+}) {
+  const projectId = process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID;
+  const apiKey = process.env.NEXT_PUBLIC_FIREBASE_API_KEY;
+  if (!projectId || !apiKey) return;
+
+  try {
+    const url = `https://firestore.googleapis.com/v1/projects/${projectId}/databases/(default)/documents/feedbackEntries?key=${apiKey}`;
+    await fetch(url, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        fields: {
+          type: { stringValue: 'iletisim' },
+          name: { stringValue: data.name },
+          email: { stringValue: data.email },
+          phone: { stringValue: data.phone },
+          message: { stringValue: data.message },
+          courseInterest: { stringValue: data.courseInterest || '' },
+          status: { stringValue: 'new' },
+          createdAt: { timestampValue: new Date().toISOString() },
+        },
+      }),
+    });
+  } catch (err) {
+    console.error('Firestore REST write failed (non-blocking):', err);
+  }
+}
+
 export async function POST(request: NextRequest) {
   // Initialize Resend with API key from environment
   const resend = new Resend(process.env.RESEND_API_KEY || '');
@@ -32,6 +66,7 @@ export async function POST(request: NextRequest) {
       // In development, just return success
       if (process.env.NODE_ENV === 'development') {
         console.log('Contact form submission (dev mode):', { name, email, phone, message, courseInterest });
+        await saveToFirestore({ name, email, phone, message, courseInterest });
         return NextResponse.json(
           { success: true, message: 'Mesajınız alındı (dev mode)' },
           { status: 200 }
@@ -67,6 +102,9 @@ export async function POST(request: NextRequest) {
         { status: 500 }
       );
     }
+
+    // Save to Firestore server-side (works regardless of user's country/VPN)
+    await saveToFirestore({ name, email, phone, message, courseInterest });
 
     return NextResponse.json(
       { success: true, message: 'Mesajınız başarıyla gönderildi' },

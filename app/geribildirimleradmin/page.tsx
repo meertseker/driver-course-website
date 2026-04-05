@@ -1,6 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+
+export const dynamic = 'force-dynamic';
 import { FeedbackEntry, listFeedbackEntries, deleteFeedbackEntry, updateFeedbackStatus, FeedbackStatus } from '@/lib/feedback';
 import toast from 'react-hot-toast';
 
