@@ -25,8 +25,8 @@ export default function Home() {
       text: 'A1, A2, A motosiklet; B, BE otomobil; C, CE kamyon; D, D1 minibüs ve daha fazlası için eğitim veriyoruz.',
     },
     {
-      title: 'İki Şube Avantajı',
-      text: 'Avcılar ve Büyükçekmece şubelerimizle İstanbul Avrupa Yakası\'nın geniş bir bölgesine hizmet sunuyoruz.',
+      title: '22 Kişilik Sınıf Kontenjanı',
+      text: 'Küçük sınıf gruplarıyla her öğrenciye bireysel ilgi gösteriliyor. Erken kayıt ile yer güvencesi sağlanır.',
     },
     {
       title: 'Esnek Ders Programı',
@@ -44,13 +44,13 @@ export default function Home() {
 
       {/* Hero Section */}
       <Hero
-        title="Avcılar ve Büyükçekmece'de Profesyonel Ehliyet Eğitimi"
-        subtitle={`${stats.yearsOfExperience} yılı aşkın tecrübemiz ve %${stats.successRate} başarı oranımızla A1'den D sınıfına tüm ehliyet kategorilerinde teorik ve direksiyon eğitimi veriyoruz. İstanbul Avrupa Yakası'nda 2 şube ile yanınızdayız.`}
+        title="Avcılar'da Profesyonel Ehliyet Eğitimi"
+        subtitle={`${stats.yearsOfExperience} yılı aşkın tecrübemiz ve %${stats.successRate} başarı oranımızla A1'den D sınıfına tüm ehliyet kategorilerinde teorik ve direksiyon eğitimi veriyoruz. İstanbul Avcılar'da hizmetinizdeyiz.`}
         primaryCta={{ text: 'Bilgi ve Fiyat Al', href: '/iletisim' }}
         secondaryCta={{ text: 'Telefonla Ulaşın', href: `tel:${settings.contact.phone.replace(/\s/g, '').replace(/[()]/g, '')}` }}
         stats={[
           { value: `%${stats.successRate}`, label: 'Başarı oranı' },
-          { value: '2 Şube', label: 'Avcılar & Büyükçekmece' },
+          { value: '20.000+', label: 'Başarılı mezun' },
           { value: `${stats.yearsOfExperience}+`, label: 'Yıl tecrübe' },
         ]}
       />

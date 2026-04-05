@@ -129,14 +129,8 @@ export async function createFeedbackEntry(input: CreateFeedbackInput): Promise<s
 
 export async function listFeedbackEntries(): Promise<FeedbackEntry[]> {
   try {
-    console.log('🔥 Firestore okuma başlıyor...');
-    
-    // Timeout ile race
     const timeoutPromise = new Promise<never>((_, reject) => {
-      setTimeout(() => {
-        console.error('⏰ 10 saniye timeout! Firestore okuma yanıt vermiyor.');
-        reject(new Error('TIMEOUT_ERROR'));
-      }, 10000);
+      setTimeout(() => reject(new Error('TIMEOUT_ERROR')), 10000);
     });
     
     const q = query(
@@ -144,22 +138,16 @@ export async function listFeedbackEntries(): Promise<FeedbackEntry[]> {
       orderBy('createdAt', 'desc')
     );
     
-    const queryPromise = getDocs(q)
-      .then((querySnapshot) => {
-        console.log('✅ Firestore okuma başarılı! Toplam kayıt:', querySnapshot.docs.length);
-        return querySnapshot.docs.map(doc => ({
-          id: doc.id,
-          ...doc.data(),
-        })) as FeedbackEntry[];
-      });
+    const queryPromise = getDocs(q).then((querySnapshot) => 
+      querySnapshot.docs.map(doc => ({
+        id: doc.id,
+        ...doc.data(),
+      })) as FeedbackEntry[]
+    );
     
     return await Promise.race([queryPromise, timeoutPromise]);
   } catch (error: unknown) {
     const feedbackError = normalizeFeedbackError(error);
-
-    console.error('❌ Firestore okuma hatası:', error);
-    console.error('❌ Hata kodu:', feedbackError.code);
-    console.error('❌ Hata mesajı:', feedbackError.message);
     
     // Timeout hatası
     if (feedbackError.message === 'TIMEOUT_ERROR') {
