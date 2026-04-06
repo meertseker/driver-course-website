@@ -54,9 +54,9 @@ export default function TestimonialCard({
 
       {/* Quote */}
       <p className="text-gray-700 dark:text-gray-300 mb-6 leading-relaxed italic text-body">
-        <span className="text-primary-red text-2xl">"</span>
+        <span className="text-primary-red text-2xl">&quot;</span>
         {text}
-        <span className="text-primary-red text-2xl">"</span>
+        <span className="text-primary-red text-2xl">&quot;</span>
       </p>
 
       {/* Author */}
