@@ -14,7 +14,7 @@ interface HeroProps {
 
 export default function Hero({ title, subtitle, primaryCta, ctaSubtext, trustIcons }: HeroProps) {
   return (
-    <section className="relative overflow-hidden bg-white pt-24 pb-20 md:pt-40 md:pb-32">
+    <section className="relative overflow-hidden bg-white pt-32 pb-20 md:pt-48 md:pb-32">
       {/* Background decorations */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
         <div className="absolute top-[-10%] left-[-5%] w-[40%] h-[40%] bg-primary-red/5 blur-[120px] rounded-full" />
