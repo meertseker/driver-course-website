@@ -41,7 +41,7 @@ async function sendEmailSafe(data: {
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { name, email, phone, message, courseInterest } = body;
+    const { name, email, phone, message, courseInterest, skipSave } = body;
 
     if (!name || !email || !phone || !message) {
       return NextResponse.json(
@@ -58,15 +58,17 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Save to Firestore using the same Firebase SDK as FeedbackForm
-    await createFeedbackEntry({
-      type: 'iletisim',
-      name,
-      email,
-      phone,
-      message,
-      courseInterest,
-    });
+    // Save to Firestore unless caller already persisted the lead.
+    if (!skipSave) {
+      await createFeedbackEntry({
+        type: 'iletisim',
+        name,
+        email,
+        phone,
+        message,
+        courseInterest,
+      });
+    }
 
     // Send email in the background (failure never affects user response)
     sendEmailSafe({ name, email, phone, message, courseInterest });
