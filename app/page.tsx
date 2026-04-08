@@ -15,7 +15,7 @@ export default function Home() {
   const settings = getSiteSettings();
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen">
       {/* Navigation */}
       <Navigation siteName={settings.siteName} />
 
@@ -75,10 +75,10 @@ export default function Home() {
         />
 
         {/* 4. GÜVEN / İSTATİSTİK */}
-        <section className="py-24 bg-white">
+        <section className="py-24">
           <div className="container mx-auto px-4 max-w-[1200px]">
             <div className="text-center mb-16">
-              <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
+              <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
                 Rakamlarla sonuçlar
               </h2>
             </div>

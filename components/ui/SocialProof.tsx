@@ -19,10 +19,10 @@ interface SocialProofProps {
 
 export default function SocialProof({ title, reviews }: SocialProofProps) {
   return (
-    <section className="py-24 bg-gray-50">
+    <section className="py-24">
       <div className="container mx-auto px-4 max-w-[1200px]">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
             {title}
           </h2>
           <div className="w-20 h-1.5 bg-primary-red mx-auto rounded-full" />
