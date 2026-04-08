@@ -16,10 +16,10 @@ interface HowItWorksProps {
 
 export default function HowItWorks({ title, steps }: HowItWorksProps) {
   return (
-    <section className="py-24 bg-white">
+    <section className="py-24">
       <div className="container mx-auto px-4 max-w-[1200px]">
         <div className="text-center mb-20">
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-4">
+          <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">
             {title}
           </h2>
         </div>
@@ -38,13 +38,13 @@ export default function HowItWorks({ title, steps }: HowItWorksProps) {
               transition={{ delay: index * 0.2, ...springs.smooth }}
               className="relative z-10 flex flex-col items-center text-center"
             >
-              <div className="w-16 h-16 rounded-full bg-white border-4 border-primary-red flex items-center justify-center text-2xl font-black text-primary-red mb-8 shadow-xl">
+              <div className="w-16 h-16 rounded-full bg-white/10 border-4 border-secondary-orange flex items-center justify-center text-2xl font-black text-white mb-8 shadow-xl backdrop-blur-md">
                 {step.number}
               </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              <h3 className="text-2xl font-bold text-white mb-4">
                 {step.title}
               </h3>
-              <p className="text-gray-600 leading-relaxed">
+              <p className="text-blue-100 leading-relaxed">
                 {step.description}
               </p>
             </motion.div>

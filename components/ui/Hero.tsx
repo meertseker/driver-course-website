@@ -14,11 +14,11 @@ interface HeroProps {
 
 export default function Hero({ title, subtitle, primaryCta, ctaSubtext, trustIcons }: HeroProps) {
   return (
-    <section className="relative overflow-hidden bg-white pt-24 pb-20 md:pt-40 md:pb-32">
+    <section className="relative overflow-hidden bg-linear-to-br from-[#071629] via-[#0C2248] to-[#071629] pt-24 pb-20 md:pt-32 md:pb-28">
       {/* Background decorations */}
       <div className="absolute inset-0 pointer-events-none overflow-hidden">
-        <div className="absolute top-[-10%] left-[-5%] w-[40%] h-[40%] bg-primary-red/5 blur-[120px] rounded-full" />
-        <div className="absolute bottom-[-10%] right-[-5%] w-[40%] h-[40%] bg-secondary-orange/5 blur-[120px] rounded-full" />
+        <div className="absolute top-[-10%] left-[-5%] w-[40%] h-[40%] bg-primary-red/25 blur-[120px] rounded-full" />
+        <div className="absolute bottom-[-10%] right-[-5%] w-[40%] h-[40%] bg-secondary-orange/20 blur-[120px] rounded-full" />
       </div>
 
       <div className="container mx-auto px-4 relative z-10 max-w-[1200px]">
@@ -33,7 +33,7 @@ export default function Hero({ title, subtitle, primaryCta, ctaSubtext, trustIco
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2, ...springs.smooth }}
-              className="text-4xl md:text-6xl font-bold text-gray-900 leading-tight mb-6"
+              className="text-4xl md:text-6xl font-bold text-white leading-tight mb-6"
             >
               {title}
             </motion.h1>
@@ -42,7 +42,7 @@ export default function Hero({ title, subtitle, primaryCta, ctaSubtext, trustIco
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3, ...springs.smooth }}
-              className="text-lg md:text-xl text-gray-600 mb-10 max-w-xl leading-relaxed"
+              className="text-lg md:text-xl text-blue-100/90 mb-10 max-w-xl leading-relaxed"
             >
               {subtitle}
             </motion.p>
@@ -55,7 +55,7 @@ export default function Hero({ title, subtitle, primaryCta, ctaSubtext, trustIco
             >
               <Link href={primaryCta.href}>
                 <motion.div
-                  className="px-10 py-5 bg-secondary-orange hover:bg-secondary-orange-dark text-white rounded-2xl font-bold text-xl shadow-lg transition-colors"
+                  className="px-10 py-5 bg-gradient-to-r from-primary-red to-secondary-orange hover:from-primary-red-dark hover:to-secondary-orange-dark text-white rounded-2xl font-bold text-xl shadow-glow-red transition-colors"
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
@@ -64,18 +64,18 @@ export default function Hero({ title, subtitle, primaryCta, ctaSubtext, trustIco
               </Link>
               
               {ctaSubtext && (
-                <p className="text-gray-500 text-sm ml-2 font-medium">
+                <p className="text-blue-100/75 text-sm ml-2 font-medium">
                   {ctaSubtext}
                 </p>
               )}
 
               {/* Trust Icons */}
               {trustIcons && (
-                <div className="flex flex-wrap items-center gap-6 mt-8 pt-8 border-t border-gray-100 w-full">
+                <div className="flex flex-wrap items-center gap-6 mt-8 pt-8 border-t border-white/15 w-full">
                   {trustIcons.map((item, index) => (
                     <div key={index} className="flex items-center gap-2">
                       <span className="text-2xl">{item.icon}</span>
-                      <span className="text-gray-700 font-semibold text-sm">{item.label}</span>
+                      <span className="text-blue-50 font-semibold text-sm">{item.label}</span>
                     </div>
                   ))}
                 </div>
@@ -90,14 +90,14 @@ export default function Hero({ title, subtitle, primaryCta, ctaSubtext, trustIco
             transition={{ delay: 0.5, ...springs.smooth }}
             className="relative"
           >
-            <div className="aspect-video md:aspect-square lg:aspect-[4/3] rounded-3xl overflow-hidden border-8 border-white shadow-2xl relative group">
+            <div className="aspect-video md:aspect-square lg:aspect-[4/3] rounded-3xl overflow-hidden border-2 border-white/30 shadow-2xl relative group">
               <img
                 src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=compress&cs=tinysrgb&w=1200"
                 alt="Direksiyon Dersi"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 loading="eager"
               />
-              <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors" />
+              <div className="absolute inset-0 bg-black/35 group-hover:bg-black/20 transition-colors" />
               
               {/* Play Button Overlay */}
               <div className="absolute inset-0 flex items-center justify-center">
@@ -119,8 +119,9 @@ export default function Hero({ title, subtitle, primaryCta, ctaSubtext, trustIco
               transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
               className="absolute -top-6 -right-6 bg-white rounded-2xl p-4 shadow-xl hidden md:block"
             >
-              <div className="text-primary-red font-bold text-2xl">%94</div>
-              <div className="text-gray-600 text-xs font-semibold">Başarı Oranı</div>
+              <div className="absolute inset-0 bg-linear-to-br from-white/25 via-transparent to-transparent" />
+              <div className="relative text-secondary-orange font-bold text-2xl">%94</div>
+              <div className="relative text-gray-700 text-xs font-semibold">Başarı Oranı</div>
             </motion.div>
           </motion.div>
         </div>

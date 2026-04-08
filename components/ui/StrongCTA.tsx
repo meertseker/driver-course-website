@@ -13,9 +13,9 @@ interface StrongCTAProps {
 
 export default function StrongCTA({ title, buttonText, buttonHref, subtext }: StrongCTAProps) {
   return (
-    <section className="py-32 bg-white relative overflow-hidden">
+    <section className="py-32 bg-transparent relative overflow-hidden">
       {/* Background Decorations */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-primary-red/5 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] bg-primary-red/10 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="container mx-auto px-4 max-w-[1200px] relative z-10">
         <motion.div
@@ -23,9 +23,9 @@ export default function StrongCTA({ title, buttonText, buttonHref, subtext }: St
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true }}
           transition={springs.smooth}
-          className="text-center"
+          className="text-center backdrop-blur-xl bg-white/10 border border-white/20 rounded-3xl p-10 md:p-16 shadow-glass-xl"
         >
-          <h2 className="text-4xl md:text-6xl font-bold text-gray-900 mb-12">
+          <h2 className="text-4xl md:text-6xl font-bold text-white mb-12">
             {title}
           </h2>
 
@@ -40,7 +40,7 @@ export default function StrongCTA({ title, buttonText, buttonHref, subtext }: St
               </motion.div>
             </Link>
 
-            <p className="text-gray-500 text-lg font-medium">
+            <p className="text-blue-100 text-lg font-medium">
               {subtext}
             </p>
           </div>

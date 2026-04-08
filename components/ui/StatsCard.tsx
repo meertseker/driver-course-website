@@ -63,11 +63,11 @@ export default function StatsCard({
       whileHover={{ y: -8, scale: 1.05 }}
       className="relative group"
     >
-      <div className="relative rounded-3xl p-8 transition-all duration-300 overflow-hidden flex flex-col items-center">
+      <div className="relative rounded-3xl p-8 transition-all duration-300 overflow-hidden flex flex-col items-center backdrop-blur-xl bg-white/10 border border-white/20 shadow-glass-lg">
         {/* Value with counter animation */}
         <div className="mb-2 relative">
           <motion.span 
-            className="text-5xl md:text-6xl font-bold text-gray-900"
+            className="text-5xl md:text-6xl font-bold text-white"
           >
             {prefix}
             {count.toLocaleString('tr-TR')}
@@ -76,7 +76,7 @@ export default function StatsCard({
         </div>
 
         {/* Label */}
-        <p className="text-gray-600 font-bold text-center relative z-10">{label}</p>
+        <p className="text-blue-100 font-bold text-center relative z-10">{label}</p>
 
         {/* Glass reflection overlay */}
         <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent group-hover:from-white/20 rounded-3xl transition-all duration-500 pointer-events-none"></div>

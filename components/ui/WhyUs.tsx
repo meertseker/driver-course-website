@@ -17,7 +17,7 @@ interface WhyUsProps {
 
 export default function WhyUs({ title, items, image }: WhyUsProps) {
   return (
-    <section className="py-24 bg-gray-50 overflow-hidden">
+    <section className="py-24 overflow-hidden">
       <div className="container mx-auto px-4 max-w-[1200px]">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left: Content */}
@@ -27,7 +27,7 @@ export default function WhyUs({ title, items, image }: WhyUsProps) {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={springs.smooth}
-              className="text-3xl md:text-5xl font-bold text-gray-900 mb-12 leading-tight"
+              className="text-3xl md:text-5xl font-bold text-white mb-12 leading-tight"
             >
               {title}
             </motion.h2>
@@ -47,10 +47,10 @@ export default function WhyUs({ title, items, image }: WhyUsProps) {
                     {item.icon}
                   </div>
                   <div>
-                    <h3 className="text-xl font-bold text-gray-900 mb-2">
+                    <h3 className="text-xl font-bold text-white mb-2">
                       {item.title}
                     </h3>
-                    <p className="text-gray-600 leading-relaxed">
+                    <p className="text-blue-100 leading-relaxed">
                       {item.description}
                     </p>
                   </div>
