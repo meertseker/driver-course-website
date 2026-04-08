@@ -18,6 +18,7 @@ export type FeedbackStatus = 'new' | 'in_review' | 'resolved';
 export interface FeedbackEntry {
   id?: string;
   type: FeedbackType;
+  source?: 'iletisim' | 'geri-bildirim';
   message: string;
   name?: string;
   email?: string;
@@ -29,6 +30,7 @@ export interface FeedbackEntry {
 
 export interface CreateFeedbackInput {
   type: FeedbackType;
+  source?: 'iletisim' | 'geri-bildirim';
   message: string;
   name?: string;
   email?: string;
@@ -37,6 +39,11 @@ export interface CreateFeedbackInput {
 }
 
 const COLLECTION_NAME = 'feedbackEntries';
+
+export function mapContactTypeForFirestore(type: FeedbackType): FeedbackType {
+  // Some Firestore rules only allow sikayet/geri-bildirim as valid types.
+  return type === 'iletisim' ? 'geri-bildirim' : type;
+}
 
 type FeedbackError = Error & {
   code?: string;
@@ -63,6 +70,7 @@ export async function createFeedbackEntry(input: CreateFeedbackInput): Promise<s
   try {
     const dataToWrite = {
       type: input.type,
+      source: input.source || 'geri-bildirim',
       message: input.message,
       name: input.name || '',
       email: input.email || '',

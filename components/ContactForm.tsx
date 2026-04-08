@@ -50,7 +50,9 @@ export default function ContactForm() {
     try {
       // Persist first so the admin panel always receives the lead.
       await createFeedbackEntry({
-        type: 'iletisim',
+        // Keep Firestore rules compatibility with existing feedback writes.
+        type: 'geri-bildirim',
+        source: 'iletisim',
         name: data.name,
         email: data.email,
         phone: data.phone,
