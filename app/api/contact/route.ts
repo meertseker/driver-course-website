@@ -1,6 +1,6 @@
 ﻿import { NextRequest, NextResponse } from 'next/server';
 import { Resend } from 'resend';
-import { createFeedbackEntry } from '@/lib/feedback';
+import { createFeedbackEntry, mapContactTypeForFirestore } from '@/lib/feedback';
 
 async function sendEmailSafe(data: {
   name: string;
@@ -61,7 +61,8 @@ export async function POST(request: NextRequest) {
     // Save to Firestore unless caller already persisted the lead.
     if (!skipSave) {
       await createFeedbackEntry({
-        type: 'iletisim',
+        type: mapContactTypeForFirestore('iletisim'),
+        source: 'iletisim',
         name,
         email,
         phone,
