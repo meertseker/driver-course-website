@@ -19,6 +19,8 @@ export default function Home() {
       {/* Navigation */}
       <Navigation siteName={settings.siteName} />
 
+      <div className="h-28"></div>
+
       {/* Main Content */}
       <main>
         {/* 1. HERO SECTION */}
